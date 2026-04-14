@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#1d6bf3">
+<title>MediAfrique AI — Tuo Stephane</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<style>
+:root{--blue:#1d6bf3;--blue2:#3b82f6;--sky:#e8f0fe;--teal:#0891b2;--white:#fff;--bg:#f0f6ff;--card:#fff;--dark:#0f172a;--text:#1e293b;--muted:#64748b;--border:#e2e8f0;--red:#ef4444;--redbg:#fef2f2;--green:#10b981;--greenbg:#ecfdf5;--amber:#f59e0b;--amberbg:#fffbeb;--shadow:0 2px 16px rgba(29,107,243,.10);--shadow2:0 8px 32px rgba(29,107,243,.18);}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
+body{min-height:100vh;background:var(--bg);font-family:'Nunito',sans-serif;color:var(--text);}
+header{background:var(--blue);position:sticky;top:0;z-index:100;box-shadow:0 4px 20px rgba(29,107,243,.3);}
+.hi{display:flex;align-items:center;gap:12px;padding:14px 16px;}
+.hl{width:44px;height:44px;border-radius:14px;background:rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;border:2px solid rgba(255,255,255,.3);}
+.hn{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:#fff;}
+.ht{font-size:9px;color:rgba(255,255,255,.7);letter-spacing:2px;text-transform:uppercase;}
+.hr{margin-left:auto;text-align:right;}
+.hb{background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:4px 10px;font-size:10px;font-weight:700;color:#fff;}
+.hc{font-size:9px;color:rgba(255,255,255,.6);margin-top:3px;}
+#banner{background:linear-gradient(135deg,#1d6bf3,#0891b2);padding:14px 16px;}
+#banner h3{font-size:13px;color:#fff;font-weight:800;margin-bottom:6px;}
+#banner p{font-size:11px;color:rgba(255,255,255,.8);margin-bottom:10px;line-height:1.5;}
+.kr{display:flex;gap:8px;}
+#kin{flex:1;padding:10px 13px;border-radius:10px;border:none;background:rgba(255,255,255,.15);color:#fff;font-size:12px;font-family:monospace;outline:none;}
+#kin::placeholder{color:rgba(255,255,255,.5);}
+#ksave{padding:10px 16px;border-radius:10px;border:none;cursor:pointer;background:#fff;color:var(--blue);font-weight:800;font-size:12px;white-space:nowrap;}
+.kn{font-size:10px;color:rgba(255,255,255,.6);margin-top:6px;}
+.kn a{color:#fff;font-weight:700;}
+.nw{background:#fff;border-bottom:2px solid var(--border);overflow-x:auto;}
+.nt-row{display:flex;padding:0 12px;min-width:max-content;}
+.nt{padding:14px 14px 12px;border:none;cursor:pointer;font-size:12px;font-family:'Nunito',sans-serif;font-weight:700;white-space:nowrap;background:none;color:var(--muted);border-bottom:3px solid transparent;transition:all .2s;margin-right:2px;}
+.nt.active{color:var(--blue);border-bottom-color:var(--blue);}
+.content{max-width:700px;margin:0 auto;padding:16px 14px 80px;}
+.page{display:none;animation:fi .25s ease;}
+.page.active{display:block;}
+@keyframes fi{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+.card{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:20px;margin-bottom:14px;box-shadow:var(--shadow);}
+.ch{display:flex;align-items:center;gap:10px;margin-bottom:6px;}
+.ci{width:42px;height:42px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
+.ci-b{background:var(--sky);} .ci-r{background:var(--redbg);} .ci-g{background:var(--greenbg);} .ci-a{background:var(--amberbg);}
+.ct{font-size:16px;font-weight:800;color:var(--dark);}
+.cs{font-size:12px;color:var(--muted);margin-bottom:16px;line-height:1.6;margin-top:4px;}
+.hero{background:linear-gradient(135deg,var(--blue),var(--teal));border-radius:24px;padding:24px 20px;margin-bottom:16px;color:#fff;text-align:center;box-shadow:var(--shadow2);}
+.he{font-size:52px;margin-bottom:10px;display:block;}
+.htitle{font-family:'Playfair Display',serif;font-size:24px;font-weight:900;margin-bottom:8px;}
+.hdesc{font-size:12px;opacity:.85;line-height:1.7;}
+.qg{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px;}
+.qb{background:#fff;border:1.5px solid var(--border);border-radius:18px;padding:16px 12px;display:flex;flex-direction:column;align-items:center;gap:6px;cursor:pointer;transition:all .2s;box-shadow:var(--shadow);}
+.qb:active{transform:scale(.96);}
+.qi{font-size:30px;} .ql{font-size:13px;font-weight:800;color:var(--dark);} .qd{font-size:10px;color:var(--muted);text-align:center;}
+.qb.bq{border-color:rgba(29,107,243,.2);background:var(--sky);}
+.qb.rq{border-color:rgba(239,68,68,.2);background:var(--redbg);}
+.qb.gq{border-color:rgba(16,185,129,.2);background:var(--greenbg);}
+.qb.aq{border-color:rgba(245,158,11,.2);background:var(--amberbg);}
+.urg{background:linear-gradient(135deg,var(--red),#dc2626);border-radius:16px;padding:16px;margin-bottom:16px;display:flex;gap:12px;align-items:center;color:#fff;box-shadow:0 4px 20px rgba(239,68,68,.3);}
+.un{font-size:26px;font-weight:900;margin-top:4px;} .ut{font-size:14px;font-weight:800;} .ud{font-size:11px;opacity:.85;margin-top:2px;}
+.fl{font-size:11px;font-weight:700;color:var(--muted);letter-spacing:1.5px;text-transform:uppercase;display:block;margin-bottom:6px;}
+input[type=text],input[type=number],select,textarea{width:100%;padding:13px 16px;border-radius:14px;border:2px solid var(--border);background:var(--bg);color:var(--text);font-size:14px;font-family:'Nunito',sans-serif;outline:none;margin-bottom:12px;transition:border-color .2s,box-shadow .2s;}
+input:focus,select:focus,textarea:focus{border-color:var(--blue);box-shadow:0 0 0 4px rgba(29,107,243,.1);background:#fff;}
+select{background:#fff;} textarea{resize:vertical;min-height:90px;} input[type=file]{display:none;}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:14px;border:none;cursor:pointer;font-size:14px;font-family:'Nunito',sans-serif;font-weight:800;transition:all .2s;}
+.btn:active{transform:scale(.97);}
+.btn-blue{background:var(--blue);color:#fff;box-shadow:0 4px 16px rgba(29,107,243,.35);}
+.btn-red{background:var(--red);color:#fff;box-shadow:0 4px 16px rgba(239,68,68,.3);}
+.btn-green{background:var(--green);color:#fff;box-shadow:0 4px 16px rgba(16,185,129,.3);}
+.btn-amber{background:var(--amber);color:#fff;box-shadow:0 4px 16px rgba(245,158,11,.3);}
+.btn-full{width:100%;justify-content:center;margin-top:4px;}
+.btn:disabled{opacity:.4;cursor:not-allowed;}
+.chip-row{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 14px;}
+.chip{padding:7px 14px;border-radius:20px;cursor:pointer;border:1.5px solid var(--border);background:#fff;color:var(--muted);font-size:12px;font-family:'Nunito',sans-serif;font-weight:600;transition:all .2s;}
+.chip.active{border-color:var(--blue);background:var(--sky);color:var(--blue);font-weight:800;}
+.rbox{border-radius:18px;padding:18px;margin-top:14px;font-size:13.5px;line-height:1.85;white-space:pre-wrap;display:none;color:var(--text);}
+.rb{background:var(--sky);border:2px solid rgba(29,107,243,.2);}
+.rg{background:var(--greenbg);border:2px solid rgba(16,185,129,.2);}
+.rr{background:var(--redbg);border:2px solid rgba(239,68,68,.2);}
+.ra{background:var(--amberbg);border:2px solid rgba(245,158,11,.2);}
+.presc{background:#fff;border:2px solid var(--blue);border-radius:20px;padding:20px;margin-top:14px;display:none;box-shadow:var(--shadow2);}
+.ph{display:flex;align-items:center;gap:12px;padding-bottom:14px;border-bottom:2px dashed var(--border);margin-bottom:16px;}
+.pl{width:46px;height:46px;border-radius:14px;background:var(--blue);display:flex;align-items:center;justify-content:center;font-size:24px;color:#fff;flex-shrink:0;}
+.pt{font-size:17px;font-weight:900;color:var(--blue);}
+.ps{font-size:10px;color:var(--muted);}
+.pc{font-size:13.5px;line-height:1.9;color:var(--text);white-space:pre-wrap;}
+.pf{margin-top:14px;padding-top:12px;border-top:2px dashed var(--border);font-size:10px;color:var(--muted);text-align:center;line-height:1.7;}
+.spin{width:28px;height:28px;margin:18px auto;border:3px solid var(--sky);border-top:3px solid var(--blue);border-radius:50%;animation:spin .7s linear infinite;display:none;}
+.spin.on{display:block;}
+@keyframes spin{to{transform:rotate(360deg);}}
+.dl{display:grid;gap:10px;}
+.dli{background:#fff;border:1.5px solid var(--border);border-radius:16px;padding:14px 16px;display:flex;gap:12px;box-shadow:var(--shadow);cursor:pointer;transition:all .2s;}
+.dli:active{transform:scale(.98);}
+.dicon{font-size:26px;flex-shrink:0;}
+.dn{font-size:14px;font-weight:800;color:var(--dark);}
+.dz{font-size:10px;color:var(--blue);font-weight:700;margin-top:2px;text-transform:uppercase;letter-spacing:1px;}
+.dd{font-size:12px;color:var(--muted);margin-top:4px;line-height:1.5;}
+.ds{display:inline-block;margin-top:6px;padding:3px 10px;border-radius:20px;font-size:10px;font-weight:700;}
+.sh{background:var(--redbg);color:var(--red);}
+.sm{background:var(--amberbg);color:var(--amber);}
+.sl{background:var(--greenbg);color:var(--green);}
+.about-hero{background:linear-gradient(135deg,var(--blue),var(--teal));border-radius:24px;padding:28px 20px;text-align:center;color:#fff;margin-bottom:16px;box-shadow:var(--shadow2);}
+.av{width:90px;height:90px;border-radius:50%;background:rgba(255,255,255,.2);border:3px solid rgba(255,255,255,.4);display:flex;align-items:center;justify-content:center;font-size:40px;margin:0 auto 14px;}
+.an{font-family:'Playfair Display',serif;font-size:24px;font-weight:900;}
+.as{font-size:12px;opacity:.85;margin-top:6px;line-height:1.7;}
+.ab{display:inline-block;margin-top:12px;background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.4);border-radius:20px;padding:6px 16px;font-size:11px;font-weight:700;}
+.il{display:grid;gap:8px;}
+.ir{background:#fff;border:1.5px solid var(--border);border-radius:14px;padding:14px 16px;display:flex;gap:12px;align-items:center;box-shadow:var(--shadow);}
+.iic{font-size:22px;flex-shrink:0;}
+.ilb{font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:1px;}
+.ivl{font-size:13px;font-weight:700;color:var(--dark);margin-top:2px;}
+.ar{background:#fff;border:1.5px solid var(--border);border-radius:16px;padding:16px;display:flex;gap:14px;align-items:center;margin-bottom:10px;box-shadow:var(--shadow);}
+.ai{width:52px;height:52px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0;}
+.ag{background:#ecfdf5;} .ab2{background:var(--sky);}
+.an2{font-size:15px;font-weight:800;color:var(--dark);}
+.ad{font-size:11px;color:var(--muted);margin-top:3px;line-height:1.5;}
+.cpbox{background:var(--sky);border:2px solid rgba(29,107,243,.15);border-radius:16px;padding:16px;text-align:center;margin-top:14px;}
+.cpbox p{font-size:12px;color:var(--muted);line-height:1.8;}
+.cpbox strong{color:var(--blue);}
+.albox{border-radius:14px;padding:14px 16px;margin-bottom:10px;display:flex;gap:12px;}
+.alr{background:var(--redbg);border:1.5px solid rgba(239,68,68,.2);}
+.ala{background:var(--amberbg);border:1.5px solid rgba(245,158,11,.2);}
+.alg{background:var(--greenbg);border:1.5px solid rgba(16,185,129,.2);}
+.ali{font-size:22px;flex-shrink:0;}
+.alt{font-size:13px;font-weight:800;color:var(--dark);}
+.aldd{font-size:11px;color:var(--muted);margin-top:3px;line-height:1.5;}
+footer{text-align:center;padding:20px 16px;background:#fff;border-top:1.5px solid var(--border);font-size:11px;color:var(--muted);}
+footer strong{color:var(--blue);}
+::-webkit-scrollbar{width:4px;height:4px;}
+::-webkit-scrollbar-thumb{background:rgba(29,107,243,.2);border-radius:4px;}
+</style>
+</head>
+<body>
+<header>
+  <div class="hi">
+    <div class="hl">🏥</div>
+    <div><div class="hn">MediAfrique AI</div><div class="ht">Santé Intelligente pour l'Afrique</div></div>
+    <div class="hr">
+      <div class="hb">✅ Protocoles OMS</div>
+      <div class="hc">🌍 Médecine Africaine</div>
+      <div class="hc">Tuo Stéphane 🇨🇮</div>
+    </div>
+  </div>
+</header>
+
+<div id="banner">
+  <h3>🔑 Activez l'IA — Clé Groq 100% GRATUITE</h3>
+  <p>Obtenez votre clé sur <a href="https://console.groq.com" target="_blank">console.groq.com</a> → Sign Up → API Keys → Create Key</p>
+  <div class="kr"><input type="text" id="kin" placeholder="gsk_...collez votre clé..."><button id="ksave" onclick="saveKey()">✅ Activer</button></div>
+  <div class="kn">La clé commence par <strong>gsk_</strong> — sauvegardée automatiquement.</div>
+</div>
+
+<div class="nw">
+  <div class="nt-row">
+    <button class="nt active" onclick="go('accueil',this)">🏠 Accueil</button>
+    <button class="nt" onclick="go('diagnostic',this)">🩺 Diagnostic</button>
+    <button class="nt" onclick="go('maladies',this)">🦠 Maladies</button>
+    <button class="nt" onclick="go('medicaments',this)">💊 Médicaments</button>
+    <button class="nt" onclick="go('maternelle',this)">👶 Maternité</button>
+    <button class="nt" onclick="go('nutrition',this)">🥗 Nutrition</button>
+    <button class="nt" onclick="go('urgence',this)">🚨 Urgences</button>
+    <button class="nt" onclick="go('pharmacie',this)">🏪 Pharmacies</button>
+    <button class="nt" onclick="go('apropos',this)">👤 À propos</button>
+  </div>
+</div>
+
+<div class="content">
+
+<div class="page active" id="page-accueil">
+  <div class="hero">
+    <span class="he">🏥</span>
+    <div class="htitle">MediAfrique AI</div>
+    <div class="hdesc">Votre médecin intelligent disponible 24h/24.<br>Diagnostic immédiat + ordonnance adaptée à l'Afrique.</div>
+  </div>
+  <!-- SECTION CONFIANCE MÉDICALE -->
+  <div style="background:white;border:2px solid #e2e8f0;border-radius:18px;padding:18px;margin-bottom:14px;box-shadow:0 2px 16px rgba(29,107,243,.08);">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;padding-bottom:12px;border-bottom:1.5px solid #e2e8f0;">
+      <div style="width:46px;height:46px;border-radius:14px;background:#e8f0fe;display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0;">🩺</div>
+      <div style="flex:1;">
+        <div style="font-size:15px;font-weight:800;color:#0f172a;">Des informations médicales fiables</div>
+        <div style="font-size:11px;color:#64748b;">Comme chez un vrai médecin</div>
+      </div>
+    </div>
+    <!-- BADGES OMS -->
+    <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px;">
+      <div style="background:#ecfdf5;border:1.5px solid #10b981;border-radius:20px;padding:5px 12px;font-size:11px;font-weight:800;color:#059669;">✅ Protocoles OMS</div>
+      <div style="background:#e8f0fe;border:1.5px solid #1d6bf3;border-radius:20px;padding:5px 12px;font-size:11px;font-weight:800;color:#1d6bf3;">🌍 Médecine Africaine</div>
+      <div style="background:#fffbeb;border:1.5px solid #f59e0b;border-radius:20px;padding:5px 12px;font-size:11px;font-weight:800;color:#d97706;">💊 Médicaments CI</div>
+    </div>
+    <div style="display:grid;gap:10px;font-size:12px;">
+
+      <div style="display:flex;gap:10px;align-items:flex-start;">
+        <div style="width:32px;height:32px;border-radius:10px;background:#ecfdf5;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;">📚</div>
+        <div>
+          <div style="font-weight:800;color:#0f172a;margin-bottom:2px;">Basé sur la science médicale</div>
+          <div style="color:#64748b;line-height:1.6;">Les informations données sont issues de manuels médicaux reconnus, de protocoles OMS et de guides de médecine tropicale africaine.</div>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:10px;align-items:flex-start;">
+        <div style="width:32px;height:32px;border-radius:10px;background:#eff6ff;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;">🌍</div>
+        <div>
+          <div style="font-weight:800;color:#0f172a;margin-bottom:2px;">Adapté à la Côte d'Ivoire</div>
+          <div style="color:#64748b;line-height:1.6;">Médicaments disponibles dans vos pharmacies, maladies tropicales fréquentes, prix en FCFA — tout est pensé pour votre réalité.</div>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:10px;align-items:flex-start;">
+        <div style="width:32px;height:32px;border-radius:10px;background:#fef9c3;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;">💊</div>
+        <div>
+          <div style="font-weight:800;color:#0f172a;margin-bottom:2px;">Médicaments prescrits comme un médecin</div>
+          <div style="color:#64748b;line-height:1.6;">Dosages, durée, mode de prise — exactement comme sur une vraie ordonnance médicale.</div>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:10px;align-items:flex-start;">
+        <div style="width:32px;height:32px;border-radius:10px;background:#fef2f2;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;">⚠️</div>
+        <div>
+          <div style="font-weight:800;color:#0f172a;margin-bottom:2px;">Toujours confirmer avec un médecin</div>
+          <div style="color:#64748b;line-height:1.6;">MediAfrique AI est un guide médical fiable. Pour les cas graves, consultez un médecin en personne pour confirmation.</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- STATS RASSURANTES -->
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:14px;padding-top:12px;border-top:1.5px solid #e2e8f0;text-align:center;">
+      <div style="background:#e8f0fe;border-radius:10px;padding:10px 6px;">
+        <div style="font-size:18px;font-weight:900;color:#1d6bf3;">500+</div>
+        <div style="font-size:9px;color:#64748b;line-height:1.4;">Maladies connues</div>
+      </div>
+      <div style="background:#ecfdf5;border-radius:10px;padding:10px 6px;">
+        <div style="font-size:18px;font-weight:900;color:#10b981;">1000+</div>
+        <div style="font-size:9px;color:#64748b;line-height:1.4;">Médicaments africains</div>
+      </div>
+      <div style="background:#fffbeb;border-radius:10px;padding:10px 6px;">
+        <div style="font-size:18px;font-weight:900;color:#f59e0b;">24h/24</div>
+        <div style="font-size:9px;color:#64748b;line-height:1.4;">Disponible toujours</div>
+      </div>
+    </div>
+  </div>
+  <div class="qg">
+    <button class="qb bq" onclick="go('diagnostic',document.querySelectorAll('.nt')[1])"><span class="qi">🩺</span><span class="ql">Diagnostic</span><span class="qd">Obtenez votre diagnostic + ordonnance</span></button>
+    <button class="qb rq" onclick="go('urgence',document.querySelectorAll('.nt')[6])"><span class="qi">🚨</span><span class="ql">Urgences</span><span class="qd">Premiers secours immédiats</span></button>
+    <button class="qb gq" onclick="go('medicaments',document.querySelectorAll('.nt')[3])"><span class="qi">💊</span><span class="ql">Médicaments</span><span class="qd">Dosages et prescriptions</span></button>
+    <button class="qb aq" onclick="go('maternelle',document.querySelectorAll('.nt')[4])"><span class="qi">👶</span><span class="ql">Maternité</span><span class="qd">Grossesse et bébé</span></button>
+  </div>
+  <div class="urg">
+    <span style="font-size:36px">🚑</span>
+    <div><div class="ut">URGENCE MÉDICALE ?</div><div class="un">15 • 185 • 170</div><div class="ud">SAMU • Police Secours • Pompiers — Côte d'Ivoire</div></div>
+  </div>
+  <div class="card">
+    <div class="ch"><div class="ci ci-g">🏪</div><div class="ct">Pharmacies de Garde — Côte d'Ivoire</div></div>
+    <p style="font-size:12px;color:var(--muted);margin-bottom:12px;line-height:1.6">Trouvez une pharmacie ouverte 24h/24 près de chez vous :</p>
+    <div style="display:grid;gap:8px;">
+      <div style="background:var(--sky);border-radius:12px;padding:14px;display:flex;gap:12px;align-items:center;">
+        <span style="font-size:28px">📞</span>
+        <div>
+          <div style="font-size:12px;font-weight:700;color:var(--muted);">APPELER POUR LA GARDE CI</div>
+          <div style="font-size:26px;font-weight:900;color:var(--blue);">170</div>
+          <div style="font-size:10px;color:var(--muted);">Disponible 24h/24 — Partout en Côte d'Ivoire</div>
+        </div>
+      </div>
+      <button class="btn btn-green btn-full" onclick="go('pharmacie',document.querySelectorAll('.nt')[7])">🏪 Voir toutes les pharmacies de garde →</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="ch"><div class="ci ci-a">⚠️</div><div class="ct">Avertissement important</div></div>
+    <p style="font-size:12px;color:var(--muted);line-height:1.7">MediAfrique AI fournit des informations à titre indicatif. <strong style="color:var(--red)">Il ne remplace pas un médecin.</strong> En cas de symptômes graves, consultez immédiatement un professionnel de santé.</p>
+  </div>
+</div>
+
+<div class="page" id="page-diagnostic">
+  <div class="card">
+    <div class="ch"><div class="ci ci-b">🩺</div><div><div class="ct">Diagnostic & Ordonnance</div></div></div>
+    <div class="cs">Renseignez vos informations. Vous recevrez un diagnostic clair avec les médicaments à prendre, comment les prendre et où les acheter.</div>
+
+    <!-- CONFIANCE -->
+    <div style="background:#e8f0fe;border-radius:12px;padding:12px 14px;margin-bottom:14px;display:flex;gap:10px;align-items:center;">
+      <span style="font-size:22px;flex-shrink:0">✅</span>
+      <div style="font-size:12px;color:#1e293b;line-height:1.6;">
+        <strong>Informations médicales fiables</strong> — basées sur les protocoles OMS et les guides de médecine tropicale. Les médicaments prescrits sont disponibles dans vos pharmacies en Côte d'Ivoire.
+      </div>
+    </div>
+    <label class="fl">Âge du patient</label>
+    <select id="d-age"><option>Nourrisson (0-2 ans)</option><option>Enfant (3-12 ans)</option><option>Adolescent (13-17 ans)</option><option selected>Adulte (18-60 ans)</option><option>Senior (60+ ans)</option></select>
+    <label class="fl">Sexe</label>
+    <select id="d-sexe"><option>Homme</option><option>Femme</option></select>
+    <label class="fl">Sélectionnez vos symptômes (plusieurs choix possibles)</label>
+    <div class="chip-row" id="chips-d">
+      <div class="chip" onclick="toggleChip(this)">🌡️ Fièvre</div>
+      <div class="chip" onclick="toggleChip(this)">🤢 Nausées</div>
+      <div class="chip" onclick="toggleChip(this)">🤧 Toux</div>
+      <div class="chip" onclick="toggleChip(this)">😴 Fatigue</div>
+      <div class="chip" onclick="toggleChip(this)">🤕 Maux de tête</div>
+      <div class="chip" onclick="toggleChip(this)">🫀 Douleur thoracique</div>
+      <div class="chip" onclick="toggleChip(this)">🚽 Diarrhée</div>
+      <div class="chip" onclick="toggleChip(this)">🤮 Vomissements</div>
+      <div class="chip" onclick="toggleChip(this)">😵 Vertiges</div>
+      <div class="chip" onclick="toggleChip(this)">🦷 Douleur abdominale</div>
+      <div class="chip" onclick="toggleChip(this)">😤 Difficultés respiratoires</div>
+      <div class="chip" onclick="toggleChip(this)">🦵 Douleurs musculaires</div>
+      <div class="chip" onclick="toggleChip(this)">👁️ Yeux jaunes</div>
+      <div class="chip" onclick="toggleChip(this)">🩸 Urines foncées</div>
+      <div class="chip" onclick="toggleChip(this)">🌊 Frissons</div>
+      <div class="chip" onclick="toggleChip(this)">😓 Sueurs nocturnes</div>
+    </div>
+    <label class="fl">Description précise</label>
+    <textarea id="d-desc" placeholder="Ex: Fièvre depuis 3 jours avec frissons, urine foncée, manque d'appétit..."></textarea>
+    <label class="fl">Depuis combien de temps ?</label>
+    <select id="d-duree"><option>Moins de 24 heures</option><option>1 à 3 jours</option><option>4 à 7 jours</option><option>1 à 2 semaines</option><option>Plus de 2 semaines</option></select>
+    <label class="fl">Antécédents médicaux (optionnel)</label>
+    <input type="text" id="d-ant" placeholder="Ex: diabète, hypertension, allergie à la pénicilline...">
+    <button class="btn btn-blue btn-full" onclick="doDiag()">🔬 Obtenir mon diagnostic et mon ordonnance</button>
+    <div class="spin" id="sp-d"></div>
+    <div class="presc" id="presc">
+      <div class="ph">
+        <div class="pl">🏥</div>
+        <div>
+          <div class="pt">MediAfrique AI</div>
+          <div class="ps">Assistant Médical — Côte d'Ivoire 🇨🇮</div>
+        </div>
+        <div style="margin-left:auto;text-align:right;">
+          <div style="background:#ecfdf5;border:1px solid #10b981;border-radius:8px;padding:4px 8px;font-size:9px;font-weight:800;color:#10b981;">✅ Protocoles OMS</div>
+          <div style="background:#e8f0fe;border:1px solid #1d6bf3;border-radius:8px;padding:4px 8px;font-size:9px;font-weight:800;color:#1d6bf3;margin-top:3px;">🌍 Médecine Africaine</div>
+        </div>
+      </div>
+      <div class="pc" id="presc-txt"></div>
+      <div class="pf">⚠️ Ce document est informatif uniquement. Consultez un médecin agréé pour confirmation.<br>Généré par MediAfrique AI • Créé par <strong>Tuo Stéphane</strong> 🇨🇮</div>
+    </div>
+  </div>
+</div>
+
+<div class="page" id="page-maladies">
+  <div class="card">
+    <div class="ch"><div class="ci ci-r">🦠</div><div class="ct">Rechercher une Maladie</div></div>
+    <div class="cs">Obtenez des informations complètes sur n'importe quelle maladie.</div>
+    <input type="text" id="m-nom" placeholder="Ex: paludisme, typhoïde, choléra, dengue...">
+    <button class="btn btn-blue btn-full" onclick="getMal()">🔍 Rechercher</button>
+    <div class="spin" id="sp-m"></div>
+    <div class="rbox rb" id="r-m"></div>
+  </div>
+  <div class="card">
+    <div class="ch"><div class="ci ci-r">🦟</div><div class="ct">Maladies Tropicales Prioritaires</div></div>
+    <div class="dl">
+      <div class="dli" onclick="qMal('Paludisme')"><span class="dicon">🦟</span><div><div class="dn">Paludisme</div><div class="dz">Toute l'Afrique subsaharienne</div><div class="dd">Fièvre, frissons, sueurs. Traitement: ACT Artémisinine.</div><span class="ds sh">⚠️ URGENT</span></div></div>
+      <div class="dli" onclick="qMal('Typhoïde')"><span class="dicon">🌡️</span><div><div class="dn">Typhoïde</div><div class="dz">Eau non potable</div><div class="dd">Fièvre prolongée, maux de tête. Traitement: Ciprofloxacine.</div><span class="ds sh">⚠️ SÉRIEUX</span></div></div>
+      <div class="dli" onclick="qMal('Choléra')"><span class="dicon">💧</span><div><div class="dn">Choléra</div><div class="dz">Zones de crise humanitaire</div><div class="dd">Diarrhée aqueuse sévère. Réhydratation immédiate.</div><span class="ds sh">⚠️ URGENT</span></div></div>
+      <div class="dli" onclick="qMal('Méningite')"><span class="dicon">🧠</span><div><div class="dn">Méningite</div><div class="dz">Ceinture sahélienne</div><div class="dd">Raideur nuque, fièvre élevée. Hôpital immédiatement.</div><span class="ds sh">🔴 CRITIQUE</span></div></div>
+      <div class="dli" onclick="qMal('Tuberculose')"><span class="dicon">🫁</span><div><div class="dn">Tuberculose</div><div class="dz">Toute l'Afrique</div><div class="dd">Toux 3+ semaines. Traitement gratuit en centre santé.</div><span class="ds sm">🟡 MODÉRÉ</span></div></div>
+    </div>
+  </div>
+</div>
+
+<div class="page" id="page-medicaments">
+  <div class="card">
+    <div class="ch"><div class="ci ci-g">💊</div><div class="ct">Information sur un Médicament</div></div>
+    <div class="cs">Dosage précis, effets et précautions pour tout médicament disponible en Afrique.</div>
+    <input type="text" id="med-nom" placeholder="Ex: Paracétamol, Amoxicilline, Coartem...">
+    <label class="fl">Pour quel patient ?</label>
+    <select id="med-age"><option>Nourrisson</option><option>Enfant</option><option selected>Adulte</option><option>Personne âgée</option><option>Femme enceinte</option></select>
+    <button class="btn btn-green btn-full" onclick="getMed()">💊 Obtenir les informations</button>
+    <div class="spin" id="sp-med"></div>
+    <div class="rbox rg" id="r-med"></div>
+  </div>
+  <div class="card">
+    <div class="ch"><div class="ci ci-g">🌿</div><div class="ct">Plantes Médicinales Africaines</div></div>
+    <input type="text" id="pl-nom" placeholder="Ex: Moringa, Neem, Kinkeliba, Artemisia...">
+    <button class="btn btn-green btn-full" onclick="getPlante()">🌿 Rechercher</button>
+    <div class="spin" id="sp-pl"></div>
+    <div class="rbox rg" id="r-pl"></div>
+  </div>
+</div>
+
+<div class="page" id="page-maternelle">
+  <div class="card">
+    <div class="ch"><div class="ci ci-b">👶</div><div class="ct">Santé Maternelle et Infantile</div></div>
+    <div class="cs">Conseils médicaux pour la grossesse, l'allaitement et la santé des enfants.</div>
+    <div class="chip-row" id="chips-mat">
+      <div class="chip active" onclick="chip(this,'chips-mat')">🤰 Grossesse</div>
+      <div class="chip" onclick="chip(this,'chips-mat')">🍼 Allaitement</div>
+      <div class="chip" onclick="chip(this,'chips-mat')">👶 Nourrisson</div>
+      <div class="chip" onclick="chip(this,'chips-mat')">💉 Vaccins enfant</div>
+      <div class="chip" onclick="chip(this,'chips-mat')">🌡️ Fièvre enfant</div>
+    </div>
+    <textarea id="mat-q" placeholder="Posez votre question précise..."></textarea>
+    <button class="btn btn-blue btn-full" onclick="getMat()">👶 Obtenir les conseils</button>
+    <div class="spin" id="sp-mat"></div>
+    <div class="rbox rb" id="r-mat"></div>
+  </div>
+  <div class="card">
+    <div class="ch"><div class="ci ci-a">💉</div><div class="ct">Calendrier Vaccinal Enfant</div></div>
+    <div class="dl">
+      <div class="dli"><span class="dicon">💉</span><div><div class="dn">Naissance</div><div class="dd">BCG + Polio oral + Hépatite B</div></div></div>
+      <div class="dli"><span class="dicon">💉</span><div><div class="dn">6 semaines</div><div class="dd">Pentavalent + Pneumocoque + Rotavirus</div></div></div>
+      <div class="dli"><span class="dicon">💉</span><div><div class="dn">9 mois</div><div class="dd">Rougeole + Fièvre jaune + Méningite A</div></div></div>
+      <div class="dli"><span class="dicon">💉</span><div><div class="dn">18 mois</div><div class="dd">Rappel Rougeole + Polio + DTP</div></div></div>
+    </div>
+  </div>
+</div>
+
+<div class="page" id="page-nutrition">
+  <div class="card">
+    <div class="ch"><div class="ci ci-g">🥗</div><div class="ct">Nutrition Thérapeutique</div></div>
+    <div class="cs">Plan alimentaire médicalisé adapté aux ressources locales africaines.</div>
+    <select id="nut-c"><option>Malnutrition enfant</option><option>Diabète type 2</option><option>Hypertension</option><option>Anémie</option><option>Grossesse</option><option>Convalescence</option><option>Obésité</option><option>Gastrite / Ulcère</option><option>Paludisme (récupération)</option></select>
+    <input type="text" id="nut-r" placeholder="Votre pays (ex: Côte d'Ivoire, Mali...)">
+    <button class="btn btn-green btn-full" onclick="getNut()">🥗 Plan nutritionnel</button>
+    <div class="spin" id="sp-nut"></div>
+    <div class="rbox rg" id="r-nut"></div>
+  </div>
+</div>
+
+<div class="page" id="page-urgence">
+  <div class="urg"><span style="font-size:40px">🚑</span><div><div class="ut">URGENCE — CÔTE D'IVOIRE</div><div class="un">15 • 185 • 170</div><div class="ud">SAMU • Police Secours • Pompiers</div></div></div>
+  <div class="card">
+    <div class="ch"><div class="ci ci-r">🆘</div><div class="ct">Premiers Secours Immédiats</div></div>
+    <div class="cs">Sélectionnez la situation pour obtenir les gestes précis à faire immédiatement.</div>
+    <div class="chip-row" id="chips-urg">
+      <div class="chip active" onclick="chip(this,'chips-urg')">🫀 Arrêt cardiaque</div>
+      <div class="chip" onclick="chip(this,'chips-urg')">🩸 Hémorragie</div>
+      <div class="chip" onclick="chip(this,'chips-urg')">🔥 Brûlure grave</div>
+      <div class="chip" onclick="chip(this,'chips-urg')">😵 Perte de conscience</div>
+      <div class="chip" onclick="chip(this,'chips-urg')">🐍 Morsure de serpent</div>
+      <div class="chip" onclick="chip(this,'chips-urg')">☠️ Empoisonnement</div>
+      <div class="chip" onclick="chip(this,'chips-urg')">🤰 Accouchement urgent</div>
+      <div class="chip" onclick="chip(this,'chips-urg')">👶 Convulsions enfant</div>
+    </div>
+    <button class="btn btn-red btn-full" onclick="getUrg()">🆘 Obtenir les gestes d'urgence</button>
+    <div class="spin" id="sp-urg"></div>
+    <div class="rbox rr" id="r-urg"></div>
+  </div>
+  <div class="card">
+    <div class="ch"><div class="ci ci-r">⚠️</div><div class="ct">Signes d'Alarme Absolus</div></div>
+    <div class="albox alr"><span class="ali">🫀</span><div><div class="alt">Douleur poitrine + bras gauche</div><div class="aldd">Infarctus possible → Urgences immédiatement</div></div></div>
+    <div class="albox alr"><span class="ali">🧠</span><div><div class="alt">Paralysie + trouble de la parole</div><div class="aldd">AVC possible → Chaque minute compte !</div></div></div>
+    <div class="albox alr"><span class="ali">🌡️</span><div><div class="alt">Fièvre 40°C+ avec raideur nuque</div><div class="aldd">Méningite possible → Hôpital immédiat</div></div></div>
+    <div class="albox ala"><span class="ali">💧</span><div><div class="alt">Diarrhée aqueuse abondante</div><div class="aldd">Déshydratation → Réhydratation + médecin urgent</div></div></div>
+  </div>
+</div>
+
+<div class="page" id="page-apropos">
+  <div class="about-hero">
+    <div class="av">👨‍💻</div>
+    <div class="an">Tuo Stéphane</div>
+    <div class="as">Élève en Terminale C<br>Lycée Moderne Alassane Ouattara d'Anyama<br>Côte d'Ivoire 🇨🇮</div>
+    <div class="ab">🏆 Développeur & Innovateur Africain</div>
+  </div>
+  <div style="margin-bottom:14px">
+    <div class="ar"><div class="ai ag">🌿</div><div><div class="an2">AgroSmart AI</div><div class="ad">Agriculture & Élevage intelligents — Diagnostic plantes, conseils météo, plan d'élevage pour l'Afrique</div></div></div>
+    <div class="ar"><div class="ai ab2">🏥</div><div><div class="an2">MediAfrique AI</div><div class="ad">Santé intelligente — Diagnostic médical, ordonnance et conseils de santé pour l'Afrique</div></div></div>
+  </div>
+  <div class="il">
+    <div class="ir"><span class="iic">🌍</span><div><div class="ilb">Nationalité</div><div class="ivl">Ivoirien — Côte d'Ivoire</div></div></div>
+    <div class="ir"><span class="iic">🏫</span><div><div class="ilb">École</div><div class="ivl">Lycée Moderne Alassane Ouattara d'Anyama</div></div></div>
+    <div class="ir"><span class="iic">📚</span><div><div class="ilb">Classe</div><div class="ivl">Terminale C — Série Scientifique</div></div></div>
+    <div class="ir"><span class="iic">💡</span><div><div class="ilb">Mission</div><div class="ivl">Mettre l'IA au service des Africains</div></div></div>
+    <div class="ir"><span class="iic">⚡</span><div><div class="ilb">Technologie</div><div class="ivl">Intelligence Artificielle — Gratuite et ultra-rapide</div></div></div>
+  </div>
+  <div class="cpbox"><p>© 2026 <strong>MediAfrique AI</strong> — Tous droits réservés<br>Conçu avec ❤️ par <strong>Tuo Stéphane</strong> — Anyama, Côte d'Ivoire 🇨🇮</p></div>
+</div>
+
+<!-- PAGE PHARMACIES DE GARDE -->
+<div class="page" id="page-pharmacie">
+
+  <!-- HEURE ACTUELLE + STATUT -->
+  <div style="background:linear-gradient(135deg,#059669,#0891b2);border-radius:20px;padding:20px;margin-bottom:14px;text-align:center;color:white;box-shadow:var(--shadow2);">
+    <div style="font-size:38px;margin-bottom:8px">🏪</div>
+    <div style="font-family:'Playfair Display',serif;font-size:20px;font-weight:900;margin-bottom:4px;">Pharmacies de Garde</div>
+    <div style="font-size:11px;opacity:.85;margin-bottom:12px;">Côte d'Ivoire — Mises à jour en temps réel</div>
+    <div style="background:rgba(255,255,255,.15);border-radius:14px;padding:12px;">
+      <div id="heure-actuelle" style="font-size:28px;font-weight:900;letter-spacing:2px;"></div>
+      <div id="statut-garde" style="font-size:12px;margin-top:4px;font-weight:700;"></div>
+    </div>
+  </div>
+
+  <!-- BARRE DE RECHERCHE PAR QUARTIER -->
+  <div class="card">
+    <div class="ch"><div class="ci ci-b">🔍</div><div class="ct">Rechercher par quartier</div></div>
+    <div style="position:relative;">
+      <input type="text" id="search-quartier"
+        placeholder="Ex: Cocody, Abobo, Bouaké, Yopougon..."
+        oninput="rechercherPharmacies(this.value)"
+        style="padding-left:44px;margin-bottom:0;"
+      >
+      <span style="position:absolute;left:14px;top:50%;transform:translateY(-50%);font-size:18px;pointer-events:none;">🔍</span>
+    </div>
+    <!-- SUGGESTIONS RAPIDES -->
+    <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;" id="suggestions">
+      <button onclick="rechercherPharmacies('Cocody')" style="padding:6px 12px;border-radius:20px;border:1.5px solid var(--border);background:var(--bg);font-size:11px;font-family:'Nunito',sans-serif;font-weight:700;cursor:pointer;color:var(--text);">Cocody</button>
+      <button onclick="rechercherPharmacies('Abobo')" style="padding:6px 12px;border-radius:20px;border:1.5px solid var(--border);background:var(--bg);font-size:11px;font-family:'Nunito',sans-serif;font-weight:700;cursor:pointer;color:var(--text);">Abobo</button>
+      <button onclick="rechercherPharmacies('Yopougon')" style="padding:6px 12px;border-radius:20px;border:1.5px solid var(--border);background:var(--bg);font-size:11px;font-family:'Nunito',sans-serif;font-weight:700;cursor:pointer;color:var(--text);">Yopougon</button>
+      <button onclick="rechercherPharmacies('Adjamé')" style="padding:6px 12px;border-radius:20px;border:1.5px solid var(--border);background:var(--bg);font-size:11px;font-family:'Nunito',sans-serif;font-weight:700;cursor:pointer;color:var(--text);">Adjamé</button>
+      <button onclick="rechercherPharmacies('Marcory')" style="padding:6px 12px;border-radius:20px;border:1.5px solid var(--border);background:var(--bg);font-size:11px;font-family:'Nunito',sans-serif;font-weight:700;cursor:pointer;color:var(--text);">Marcory</button>
+      <button onclick="rechercherPharmacies('Plateau')" style="padding:6px 12px;border-radius:20px;border:1.5px solid var(--border);background:var(--bg);font-size:11px;font-family:'Nunito',sans-serif;font-weight:700;cursor:pointer;color:var(--text);">Plateau</button>
+      <button onclick="rechercherPharmacies('Bouaké')" style="padding:6px 12px;border-radius:20px;border:1.5px solid var(--border);background:var(--bg);font-size:11px;font-family:'Nunito',sans-serif;font-weight:700;cursor:pointer;color:var(--text);">Bouaké</button>
+      <button onclick="rechercherPharmacies('Anyama')" style="padding:6px 12px;border-radius:20px;border:1.5px solid var(--border);background:var(--bg);font-size:11px;font-family:'Nunito',sans-serif;font-weight:700;cursor:pointer;color:var(--text);">Anyama</button>
+    </div>
+    <!-- RÉSULTATS RECHERCHE -->
+    <div id="resultats-recherche" style="margin-top:12px;display:none;">
+      <div id="titre-resultats" style="font-size:13px;font-weight:800;color:var(--dark);margin-bottom:8px;"></div>
+      <div id="liste-resultats" style="display:grid;gap:8px;"></div>
+    </div>
+  </div>
+
+  <!-- PHARMACIES DISPONIBLES MAINTENANT -->
+  <div class="card" id="pharmacies-now">
+    <div class="ch"><div class="ci ci-g">🟢</div><div class="ct" id="titre-now">Pharmacies ouvertes maintenant</div></div>
+    <div id="liste-pharmacies" style="display:grid;gap:8px;"></div>
+  </div>
+
+  <!-- PROCHAINES GARDES -->
+  <div class="card">
+    <div class="ch"><div class="ci ci-a">⏰</div><div class="ct">Prochaines gardes</div></div>
+    <div id="prochaines-gardes" style="display:grid;gap:8px;"></div>
+  </div>
+
+  <!-- TOUJOURS OUVERTES 24H/24 -->
+  <div class="card">
+    <div class="ch"><div class="ci ci-b">🏥</div><div class="ct">Toujours ouvertes 24h/24</div></div>
+    <div style="display:grid;gap:8px;">
+      <div style="background:var(--sky);border-radius:12px;padding:12px 14px;">
+        <div style="font-size:11px;font-weight:800;color:var(--blue);margin-bottom:8px;">🏥 CHU — Abidjan</div>
+        <div style="display:grid;gap:6px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;font-size:12px;">
+            <span>🟢 Pharmacie CHU de Cocody</span>
+            <span style="background:#ecfdf5;color:#059669;padding:2px 8px;border-radius:20px;font-size:10px;font-weight:800;">OUVERT</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;font-size:12px;">
+            <span>🟢 Pharmacie CHU de Treichville</span>
+            <span style="background:#ecfdf5;color:#059669;padding:2px 8px;border-radius:20px;font-size:10px;font-weight:800;">OUVERT</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;font-size:12px;">
+            <span>🟢 Pharmacie CHU de Yopougon</span>
+            <span style="background:#ecfdf5;color:#059669;padding:2px 8px;border-radius:20px;font-size:10px;font-weight:800;">OUVERT</span>
+          </div>
+        </div>
+      </div>
+      <div style="background:var(--greenbg);border-radius:12px;padding:12px 14px;">
+        <div style="font-size:11px;font-weight:800;color:var(--green);margin-bottom:8px;">🏥 CHU — Villes de l'intérieur</div>
+        <div style="font-size:11px;color:var(--text);line-height:2;">
+          🟢 CHU Bouaké • 🟢 CHU Yamoussoukro<br>
+          🟢 Hôpital San-Pédro • 🟢 CHR Korhogo<br>
+          🟢 Hôpital Daloa • 🟢 Hôpital Man
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LÉGENDE -->
+  <div class="card">
+    <div style="display:flex;gap:10px;flex-wrap:wrap;font-size:11px;">
+      <div style="display:flex;align-items:center;gap:5px;"><span style="background:#ecfdf5;color:#059669;padding:2px 8px;border-radius:20px;font-weight:800;font-size:10px;">OUVERT</span> Disponible maintenant</div>
+      <div style="display:flex;align-items:center;gap:5px;"><span style="background:#fef2f2;color:#ef4444;padding:2px 8px;border-radius:20px;font-weight:800;font-size:10px;">FERMÉ</span> Fermé en ce moment</div>
+      <div style="display:flex;align-items:center;gap:5px;"><span style="background:#fffbeb;color:#f59e0b;padding:2px 8px;border-radius:20px;font-weight:800;font-size:10px;">GARDE</span> En service de garde</div>
+    </div>
+  </div>
+
+</div>
+
+</div>
+<footer>🏥 MediAfrique AI — Santé Intelligente pour l'Afrique | Créé par <strong>Tuo Stéphane</strong> | Lycée Moderne Alassane Ouattara d'Anyama 🇨🇮</footer>
+
+<script>
+let GK=localStorage.getItem("mediafrique_groq")||"";
+
+// ── PHARMACIES EN TEMPS RÉEL ──────────────────────────────────────────────────
+const PHARMACIES = [
+  // ABIDJAN — PLATEAU
+  {nom:"Pharmacie du Plateau Centre",quartier:"Plateau",ville:"Abidjan",h_debut:8,h_fin:22,jour:[0,1,2,3,4,5,6]},
+  {nom:"Pharmacie de Garde Plateau (nuit)",quartier:"Plateau",ville:"Abidjan",h_debut:22,h_fin:8,jour:[0,1,2,3,4,5,6]},
+  // COCODY
+  {nom:"Pharmacie Cocody II Plateaux",quartier:"Cocody",ville:"Abidjan",h_debut:8,h_fin:21,jour:[1,2,3,4,5]},
+  {nom:"Pharmacie de Garde Cocody",quartier:"Cocody",ville:"Abidjan",h_debut:8,h_fin:22,jour:[6,0]},
+  {nom:"Pharmacie Riviera Bonoumin",quartier:"Cocody",ville:"Abidjan",h_debut:8,h_fin:20,jour:[1,2,3,4,5,6]},
+  {nom:"Pharmacie Angré",quartier:"Cocody",ville:"Abidjan",h_debut:8,h_fin:21,jour:[0,1,2,3,4,5,6]},
+  // ADJAMÉ
+  {nom:"Pharmacie Adjamé Grand Marché",quartier:"Adjamé",ville:"Abidjan",h_debut:7,h_fin:21,jour:[0,1,2,3,4,5,6]},
+  {nom:"Pharmacie de Garde Adjamé (nuit)",quartier:"Adjamé",ville:"Abidjan",h_debut:21,h_fin:7,jour:[5,6,0]},
+  {nom:"Pharmacie Adjamé 220 Logements",quartier:"Adjamé",ville:"Abidjan",h_debut:8,h_fin:20,jour:[1,2,3,4,5,6]},
+  // ABOBO
+  {nom:"Pharmacie Abobo Gare",quartier:"Abobo",ville:"Abidjan",h_debut:8,h_fin:20,jour:[1,2,3,4,5]},
+  {nom:"Pharmacie de Garde Abobo (nuit)",quartier:"Abobo",ville:"Abidjan",h_debut:20,h_fin:8,jour:[5,6,0]},
+  {nom:"Pharmacie Abobo Doumé",quartier:"Abobo",ville:"Abidjan",h_debut:8,h_fin:20,jour:[0,1,2,3,4,5,6]},
+  {nom:"Pharmacie Abobo Agnissankoi",quartier:"Abobo",ville:"Abidjan",h_debut:8,h_fin:19,jour:[1,2,3,4,5,6]},
+  // ANYAMA
+  {nom:"Pharmacie Centrale d'Anyama",quartier:"Anyama",ville:"Anyama",h_debut:8,h_fin:20,jour:[1,2,3,4,5,6]},
+  {nom:"Pharmacie du Marché d'Anyama",quartier:"Anyama",ville:"Anyama",h_debut:8,h_fin:19,jour:[0,1,2,3,4,5,6]},
+  {nom:"Pharmacie de Garde Anyama (week-end)",quartier:"Anyama",ville:"Anyama",h_debut:8,h_fin:20,jour:[6,0]},
+  // YOPOUGON
+  {nom:"Pharmacie Yopougon Selmer",quartier:"Yopougon",ville:"Abidjan",h_debut:8,h_fin:21,jour:[0,1,2,3,4,5,6]},
+  {nom:"Pharmacie Yopougon Maroc",quartier:"Yopougon",ville:"Abidjan",h_debut:8,h_fin:20,jour:[1,2,3,4,5,6]},
+  {nom:"Pharmacie de Garde Yopougon (nuit)",quartier:"Yopougon",ville:"Abidjan",h_debut:21,h_fin:8,jour:[5,6,0]},
+  {nom:"Pharmacie Yopougon Wassakara",quartier:"Yopougon",ville:"Abidjan",h_debut:8,h_fin:20,jour:[0,1,2,3,4,5,6]},
+  // MARCORY
+  {nom:"Pharmacie Marcory Zone 4",quartier:"Marcory",ville:"Abidjan",h_debut:8,h_fin:21,jour:[0,1,2,3,4,5,6]},
+  {nom:"Pharmacie de Garde Marcory (nuit)",quartier:"Marcory",ville:"Abidjan",h_debut:21,h_fin:8,jour:[5,6,0]},
+  // KOUMASSI
+  {nom:"Pharmacie Koumassi Commerce",quartier:"Koumassi",ville:"Abidjan",h_debut:8,h_fin:20,jour:[1,2,3,4,5]},
+  {nom:"Pharmacie de Garde Koumassi",quartier:"Koumassi",ville:"Abidjan",h_debut:20,h_fin:8,jour:[5,6,0]},
+  // TREICHVILLE
+  {nom:"Pharmacie Treichville Marché",quartier:"Treichville",ville:"Abidjan",h_debut:7,h_fin:21,jour:[0,1,2,3,4,5,6]},
+  {nom:"Pharmacie de Garde Treichville (nuit)",quartier:"Treichville",ville:"Abidjan",h_debut:21,h_fin:7,jour:[5,6,0]},
+  // PORT-BOUËT
+  {nom:"Pharmacie Port-Bouët Aéroport",quartier:"Port-Bouët",ville:"Abidjan",h_debut:8,h_fin:21,jour:[0,1,2,3,4,5,6]},
+  // ATTÉCOUBÉ
+  {nom:"Pharmacie Attécoubé Marché",quartier:"Attécoubé",ville:"Abidjan",h_debut:8,h_fin:20,jour:[1,2,3,4,5,6]},
+  // BINGERVILLE
+  {nom:"Pharmacie Bingerville Centre",quartier:"Bingerville",ville:"Bingerville",h_debut:8,h_fin:19,jour:[0,1,2,3,4,5,6]},
+  // GRAND-BASSAM
+  {nom:"Pharmacie Grand-Bassam Centre",quartier:"Grand-Bassam",ville:"Grand-Bassam",h_debut:8,h_fin:19,jour:[0,1,2,3,4,5,6]},
+  // BOUAKÉ
+  {nom:"Pharmacie Centrale Bouaké",quartier:"Bouaké",ville:"Bouaké",h_debut:8,h_fin:21,jour:[0,1,2,3,4,5,6]},
+  {nom:"Pharmacie de Garde Bouaké (nuit)",quartier:"Bouaké",ville:"Bouaké",h_debut:21,h_fin:8,jour:[5,6,0]},
+  {nom:"Pharmacie Bouaké Commerce",quartier:"Bouaké",ville:"Bouaké",h_debut:8,h_fin:19,jour:[1,2,3,4,5,6]},
+  // YAMOUSSOUKRO
+  {nom:"Pharmacie Yamoussoukro Centre",quartier:"Yamoussoukro",ville:"Yamoussoukro",h_debut:8,h_fin:20,jour:[0,1,2,3,4,5,6]},
+  {nom:"Pharmacie de Garde Yamoussoukro",quartier:"Yamoussoukro",ville:"Yamoussoukro",h_debut:20,h_fin:8,jour:[5,6,0]},
+  // DALOA
+  {nom:"Pharmacie Daloa Centre",quartier:"Daloa",ville:"Daloa",h_debut:8,h_fin:20,jour:[0,1,2,3,4,5,6]},
+  // SAN-PÉDRO
+  {nom:"Pharmacie San-Pédro Port",quartier:"San-Pédro",ville:"San-Pédro",h_debut:8,h_fin:20,jour:[0,1,2,3,4,5,6]},
+  // KORHOGO
+  {nom:"Pharmacie Korhogo Centre",quartier:"Korhogo",ville:"Korhogo",h_debut:8,h_fin:20,jour:[0,1,2,3,4,5,6]},
+  // MAN
+  {nom:"Pharmacie Man Centre",quartier:"Man",ville:"Man",h_debut:8,h_fin:19,jour:[0,1,2,3,4,5,6]},
+  // GAGNOA
+  {nom:"Pharmacie Gagnoa Centre",quartier:"Gagnoa",ville:"Gagnoa",h_debut:8,h_fin:19,jour:[0,1,2,3,4,5,6]},
+  // ABENGOUROU
+  {nom:"Pharmacie Abengourou Centre",quartier:"Abengourou",ville:"Abengourou",h_debut:8,h_fin:19,jour:[0,1,2,3,4,5,6]},
+];
+
+const CHU_24H = [
+  {nom:"Pharmacie CHU de Cocody",quartier:"Cocody",ville:"Abidjan"},
+  {nom:"Pharmacie CHU de Treichville",quartier:"Treichville",ville:"Abidjan"},
+  {nom:"Pharmacie CHU de Yopougon",quartier:"Yopougon",ville:"Abidjan"},
+  {nom:"Pharmacie CHU de Bouaké",quartier:"Bouaké",ville:"Bouaké"},
+  {nom:"Pharmacie CHU de Yamoussoukro",quartier:"Yamoussoukro",ville:"Yamoussoukro"},
+];
+
+function estOuverte(ph, h, jour) {
+  if (!ph.jour.includes(jour)) return false;
+  if (ph.h_debut < ph.h_fin) return h >= ph.h_debut && h < ph.h_fin;
+  return h >= ph.h_debut || h < ph.h_fin;
+}
+
+function carteOuverte(p, fermeA) {
+  return `<div style="background:#f0fdf4;border:1.5px solid #86efac;border-radius:12px;padding:12px 14px;display:flex;justify-content:space-between;align-items:center;gap:8px;">
+    <div>
+      <div style="font-size:13px;font-weight:800;color:#0f172a;">${p.nom}</div>
+      <div style="font-size:11px;color:#64748b;margin-top:2px;">📍 ${p.quartier}${p.ville&&p.ville!==p.quartier?' — '+p.ville:''}</div>
+      <div style="font-size:10px;color:#16a34a;margin-top:2px;">⏰ Ferme à ${fermeA}</div>
+    </div>
+    <span style="background:#dcfce7;border:1px solid #16a34a;color:#15803d;padding:4px 10px;border-radius:20px;font-size:10px;font-weight:800;flex-shrink:0;">GARDE</span>
+  </div>`;
+}
+
+function carteFermee(p, ouvreA) {
+  return `<div style="background:#fef2f2;border:1.5px solid #fca5a5;border-radius:12px;padding:12px 14px;display:flex;justify-content:space-between;align-items:center;gap:8px;">
+    <div>
+      <div style="font-size:13px;font-weight:800;color:#0f172a;">${p.nom}</div>
+      <div style="font-size:11px;color:#64748b;margin-top:2px;">📍 ${p.quartier}${p.ville&&p.ville!==p.quartier?' — '+p.ville:''}</div>
+      <div style="font-size:10px;color:#dc2626;margin-top:2px;">🕐 Ouvre à ${ouvreA}</div>
+    </div>
+    <span style="background:#fef2f2;border:1px solid #ef4444;color:#dc2626;padding:4px 10px;border-radius:20px;font-size:10px;font-weight:800;flex-shrink:0;">FERMÉ</span>
+  </div>`;
+}
+
+function carteCHU(p) {
+  return `<div style="background:#ecfdf5;border:1.5px solid #10b981;border-radius:12px;padding:12px 14px;display:flex;justify-content:space-between;align-items:center;gap:8px;">
+    <div>
+      <div style="font-size:13px;font-weight:800;color:#0f172a;">${p.nom}</div>
+      <div style="font-size:11px;color:#64748b;margin-top:2px;">📍 ${p.quartier}${p.ville&&p.ville!==p.quartier?' — '+p.ville:''}</div>
+      <div style="font-size:10px;color:#059669;margin-top:2px;">⏰ Ouvert 24h/24</div>
+    </div>
+    <span style="background:#ecfdf5;border:1px solid #10b981;color:#059669;padding:4px 10px;border-radius:20px;font-size:10px;font-weight:800;flex-shrink:0;">OUVERT</span>
+  </div>`;
+}
+
+function rechercherPharmacies(query) {
+  const input = document.getElementById("search-quartier");
+  if (input && query) input.value = query;
+
+  const q = query.toLowerCase().trim();
+  const resultatsEl = document.getElementById("resultats-recherche");
+  const titreEl = document.getElementById("titre-resultats");
+  const listeEl = document.getElementById("liste-resultats");
+
+  if (!q) { resultatsEl.style.display = "none"; return; }
+
+  const now = new Date();
+  const h = now.getHours();
+  const jour = now.getDay();
+
+  // CHU correspondants
+  const chuTrouves = CHU_24H.filter(p =>
+    p.quartier.toLowerCase().includes(q) ||
+    p.nom.toLowerCase().includes(q) ||
+    p.ville.toLowerCase().includes(q)
+  );
+
+  // Pharmacies correspondantes
+  const trouves = PHARMACIES.filter(p =>
+    p.quartier.toLowerCase().includes(q) ||
+    p.nom.toLowerCase().includes(q) ||
+    p.ville.toLowerCase().includes(q)
+  );
+
+  if (chuTrouves.length === 0 && trouves.length === 0) {
+    resultatsEl.style.display = "block";
+    titreEl.textContent = `❌ Aucune pharmacie trouvée pour "${query}"`;
+    listeEl.innerHTML = `<div style="background:#fef2f2;border-radius:12px;padding:14px;text-align:center;font-size:12px;color:#64748b;">
+      Essayez: Cocody, Abobo, Yopougon, Adjamé, Anyama, Bouaké...
+    </div>`;
+    return;
+  }
+
+  const ouvertes = trouves.filter(p => estOuverte(p, h, jour));
+  const fermees = trouves.filter(p => !estOuverte(p, h, jour));
+  const total = chuTrouves.length + ouvertes.length;
+
+  titreEl.innerHTML = `🔍 Résultats pour "<strong>${query}</strong>" — <span style="color:#059669">${total} ouverte${total>1?'s':''} maintenant</span>`;
+
+  let html = "";
+  chuTrouves.forEach(p => { html += carteCHU(p); });
+  ouvertes.forEach(p => {
+    const fermeA = `${String(p.h_fin).padStart(2,'0')}:00`;
+    html += carteOuverte(p, fermeA);
+  });
+  fermees.forEach(p => {
+    const ouvreA = `${String(p.h_debut).padStart(2,'0')}:00`;
+    html += carteFermee(p, ouvreA);
+  });
+
+  listeEl.innerHTML = html;
+  resultatsEl.style.display = "block";
+}
+
+function mettreAJourPharmacies() {
+  const now = new Date();
+  const h = now.getHours();
+  const min = now.getMinutes();
+  const jour = now.getDay();
+  const heureStr = `${String(h).padStart(2,'0')}:${String(min).padStart(2,'0')}`;
+  const joursNoms = ["Dimanche","Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi"];
+
+  document.getElementById("heure-actuelle").textContent = heureStr;
+
+  const ouvertes = PHARMACIES.filter(p => estOuverte(p, h, jour));
+  const fermees = PHARMACIES.filter(p => !estOuverte(p, h, jour));
+
+  document.getElementById("statut-garde").textContent =
+    `${joursNoms[jour]} — ${ouvertes.length + CHU_24H.length} pharmacies disponibles maintenant`;
+  document.getElementById("titre-now").textContent =
+    `🟢 ${ouvertes.length + CHU_24H.length} pharmacies ouvertes maintenant`;
+
+  let html = "";
+  CHU_24H.forEach(p => { html += carteCHU(p); });
+  ouvertes.forEach(p => {
+    const fermeA = `${String(p.h_fin).padStart(2,'0')}:00`;
+    html += carteOuverte(p, fermeA);
+  });
+  document.getElementById("liste-pharmacies").innerHTML = html ||
+    `<div style="font-size:12px;color:var(--muted);text-align:center;padding:10px">Aucune pharmacie de quartier — consultez les CHU 24h/24.</div>`;
+
+  let html2 = "";
+  fermees.slice(0, 5).forEach(p => {
+    const ouvreA = `${String(p.h_debut).padStart(2,'0')}:00`;
+    html2 += carteFermee(p, ouvreA);
+  });
+  document.getElementById("prochaines-gardes").innerHTML = html2;
+
+  // Relancer la recherche si une query est active
+  const q = document.getElementById("search-quartier")?.value;
+  if (q && q.trim()) rechercherPharmacies(q);
+}
+
+window.onload=()=>{
+  if(GK) document.getElementById("banner").style.display="none";
+  mettreAJourPharmacies();
+  setInterval(mettreAJourPharmacies, 60000);
+};
+function saveKey(){const k=document.getElementById("kin").value.trim();if(!k.startsWith("gsk_")){alert("❌ Clé invalide ! Elle doit commencer par gsk_");return;}GK=k;localStorage.setItem("mediafrique_groq",k);const b=document.getElementById("banner");b.style.opacity="0";b.style.transform="translateY(-10px)";b.style.transition="all .4s";setTimeout(()=>b.style.display="none",400);}
+async function callGroq(prompt){if(!GK){alert("⚠️ Entrez votre clé Groq gratuite en haut !");throw new Error("Clé manquante");}const res=await fetch("https://api.groq.com/openai/v1/chat/completions",{method:"POST",headers:{"Content-Type":"application/json","Authorization":"Bearer "+GK},body:JSON.stringify({model:"llama-3.3-70b-versatile",messages:[{role:"system",content:"Tu es un médecin expert chevronné spécialisé en médecine africaine et tropicale. Tu dois TOUJOURS répondre en français. Tes réponses sont directes, précises et adaptées aux réalités africaines. Tu poses un diagnostic clair et tu prescris des médicaments avec les dosages précis disponibles en Afrique. Rappelle toujours de consulter un vrai médecin pour confirmation."},{role:"user",content:prompt}],max_tokens:1200,temperature:0.4})});if(!res.ok){const e=await res.json().catch(()=>({}));throw new Error(e.error?.message||"Erreur "+res.status);}return(await res.json()).choices?.[0]?.message?.content||"Réponse vide.";}
+function go(n,b){document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));document.querySelectorAll(".nt").forEach(x=>x.classList.remove("active"));document.getElementById("page-"+n).classList.add("active");if(b)b.classList.add("active");}
+function chip(el,gid){document.querySelectorAll("#"+gid+" .chip").forEach(c=>c.classList.remove("active"));el.classList.add("active");}
+function toggleChip(el){el.classList.toggle("active");}
+function getChips(gid){return[...document.querySelectorAll("#"+gid+" .chip.active")].map(c=>c.textContent.trim()).join(", ");}
+function spin(id,on){document.getElementById(id).classList.toggle("on",on);}
+function show(id,txt){const el=document.getElementById(id);el.style.display="block";el.textContent=txt;}
+function hide(id){document.getElementById(id).style.display="none";}
+async function doDiag(){
+  const age=document.getElementById("d-age").value;
+  const sexe=document.getElementById("d-sexe").value;
+  const sym=getChips("chips-d");
+  const desc=document.getElementById("d-desc").value;
+  const duree=document.getElementById("d-duree").value;
+  const ant=document.getElementById("d-ant").value;
+  if(!desc&&!sym)return alert("Veuillez décrire vos symptômes.");
+  spin("sp-d",true);document.getElementById("presc").style.display="none";
+  try{
+    const r=await callGroq(`PATIENT: ${age}, ${sexe}.\nSYMPTÔMES: ${sym||"voir description"}.\nDESCRIPTION: ${desc||"voir symptômes"}.\nDURÉE: ${duree}.\nANTÉCÉDENTS: ${ant||"aucun"}.
+
+Tu es un médecin expert fiable. Sois BREF et DIRECT. En français:
+
+🩺 MALADIE: [nom clair]
+⚠️ URGENCE: [CRITIQUE / ÉLEVÉ / MODÉRÉ / FAIBLE]
+
+💊 MÉDICAMENTS:
+• [Médicament 1] — [dose] — [comment prendre] — [fréquence] — [durée]
+• [Médicament 2 si besoin] — [dose] — [comment] — [fréquence] — [durée]
+
+🏪 PHARMACIES OÙ ACHETER (CÔTE D'IVOIRE):
+📞 Appelez le 170 — pharmacie de garde 24h/24
+🏥 CHU Cocody • CHU Treichville • CHU Yopougon
+🟢 Toute pharmacie de votre quartier
+💡 Demandez version générique = moins cher, même effet
+
+🔬 EXAMENS À FAIRE:
+• [Examen] — [CHU/Clinique/Centre santé] — [prix FCFA]
+
+✅ FAIRE: [1 conseil]
+🚫 ÉVITER: [1 chose]
+💰 COÛT ESTIMÉ: [FCFA]
+
+─────────────────
+📋 Protocoles OMS • Médecine tropicale africaine • Consultez un médecin pour confirmation.`);
+    document.getElementById("presc-txt").textContent=r;
+    document.getElementById("presc").style.display="block";
+  }catch(e){document.getElementById("presc-txt").textContent="❌ Erreur: "+e.message;document.getElementById("presc").style.display="block";}
+  spin("sp-d",false);
+}
+async function getMal(){const n=document.getElementById("m-nom").value.trim();if(!n)return alert("Entrez le nom d'une maladie.");spin("sp-m",true);hide("r-m");try{show("r-m",await callGroq(`Maladie: ${n}\n\nFiche médicale en français:\n1.🦠 Définition et cause\n2.🌍 Zones à risque en Afrique\n3.🌡️ Symptômes détaillés\n4.💊 Traitement (médicaments dispo en Afrique + dosages + prix FCFA)\n5.🌿 Remèdes africains traditionnels efficaces\n6.🛡️ Prévention\n7.⚠️ Complications si non traitée\n8.🏥 Quand aller à l'hôpital`));}catch(e){show("r-m","❌ "+e.message);}spin("sp-m",false);}
+function qMal(n){document.getElementById("m-nom").value=n;go("maladies",document.querySelectorAll(".nt")[2]);getMal();}
+async function getMed(){const n=document.getElementById("med-nom").value.trim();const a=document.getElementById("med-age").value;if(!n)return alert("Entrez le nom d'un médicament.");spin("sp-med",true);hide("r-med");try{show("r-med",await callGroq(`Médicament: ${n}, Pour: ${a}\n\nFiche complète en français:\n1.💊 Indication\n2.📏 Posologie PRÉCISE pour ${a}\n3.⏰ Mode de prise\n4.⚠️ Effets secondaires\n5.🚫 Contre-indications\n6.🔄 Interactions importantes\n7.💰 Prix en Côte d'Ivoire (FCFA)`));}catch(e){show("r-med","❌ "+e.message);}spin("sp-med",false);}
+async function getPlante(){const n=document.getElementById("pl-nom").value.trim();if(!n)return alert("Entrez le nom d'une plante.");spin("sp-pl",true);hide("r-pl");try{show("r-pl",await callGroq(`Plante médicinale africaine: ${n}\n\nFiche en français:\n1.🌿 Description et zones en Afrique\n2.💊 Propriétés médicales prouvées\n3.🍵 Préparation (tisane, décoction...)\n4.📏 Dosage\n5.⚠️ Précautions`));}catch(e){show("r-pl","❌ "+e.message);}spin("sp-pl",false);}
+async function getMat(){const s=getChips("chips-mat")||"grossesse";const q=document.getElementById("mat-q").value;spin("sp-mat",true);hide("r-mat");try{show("r-mat",await callGroq(`Sujet: ${s}. Question: ${q||"conseils généraux"}\n\nConseils médicaux maternité en français, adaptés à l'Afrique:\n1.📋 Informations essentielles\n2.✅ À faire\n3.🚫 À éviter absolument\n4.💊 Médicaments sûrs disponibles en Afrique\n5.🌿 Remèdes naturels africains validés\n6.⚠️ Signes d'alarme\n7.🏥 Quand consulter d'urgence`));}catch(e){show("r-mat","❌ "+e.message);}spin("sp-mat",false);}
+async function getNut(){const c=document.getElementById("nut-c").value;const r=document.getElementById("nut-r").value||"Côte d'Ivoire";spin("sp-nut",true);hide("r-nut");try{show("r-nut",await callGroq(`Condition: ${c}, Région: ${r}\n\nPlan nutritionnel thérapeutique en français:\n1.🥗 Aliments recommandés (locaux + quantités)\n2.🚫 Aliments interdits\n3.📅 Menu type journalier\n4.🌿 Compléments naturels africains\n5.💰 Budget en FCFA/jour\n6.📈 Résultats attendus`));}catch(e){show("r-nut","❌ "+e.message);}spin("sp-nut",false);}
+async function getUrg(){const s=getChips("chips-urg")||"arrêt cardiaque";spin("sp-urg",true);hide("r-urg");try{show("r-urg",await callGroq(`URGENCE: ${s}\n\nSois TRÈS BREF. La personne est en danger. Maximum 5 étapes courtes:\n\n🆘 URGENCE: ${s}\n📞 Appeler 15 ou 185 MAINTENANT\n\n👐 GESTES (étapes courtes):\n1. [action courte]\n2. [action courte]\n3. [action courte]\n\n🚫 NE PAS FAIRE: [1 chose courte]\n⏱️ EN ATTENDANT: [1 conseil court]`));}catch(e){show("r-urg","❌ "+e.message);}spin("sp-urg",false);}
+</script>
+</body>
+</html>
