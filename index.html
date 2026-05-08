@@ -3,10 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>MediAfrique AI - Médecin intelligent, design réaliste</title>
-  <!-- Google Fonts réaliste & lisible -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
-  <!-- Font Awesome 6 (gratuit) -->
+  <title>MediAfrique AI — Médecine intelligente pour l'Afrique</title>
+  <!-- Typographie moderne & lisible -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     * {
@@ -17,491 +16,502 @@
 
     body {
       font-family: 'Inter', sans-serif;
-      background: #f1f5f9;  /* fond hôpital neutre */
+      background: #f8fafc;
       color: #0f172a;
+      font-size: 17px;
       line-height: 1.5;
-      scroll-behavior: smooth;
     }
 
-    /* Conteneur principal */
+    /* Conteneur large et aéré */
     .container {
-      max-width: 1280px;
+      max-width: 1400px;
       margin: 0 auto;
-      padding: 1.5rem;
+      padding: 2rem;
     }
 
-    /* ========== DESIGN RÉALISTE MÉDICAL ========== */
-    /* header professionnel */
-    .top-bar {
-      background: #0b3b3f;  /* bleu vert profond - confiance médicale */
-      color: white;
-      padding: 0.75rem 1.5rem;
+    /* ========== HEADER PROFESSIONNEL ========== */
+    .header {
+      background: white;
+      border-radius: 32px;
+      padding: 1.25rem 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+      border: 1px solid #e9edf2;
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      font-size: 0.9rem;
-      border-bottom: 3px solid #eab308;
+      gap: 1.5rem;
     }
-    .logo-area {
+    .logo {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 1rem;
     }
     .logo-icon {
-      background: white;
-      color: #0b3b3f;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
+      background: linear-gradient(135deg, #0f5e52, #0a4239);
+      width: 56px;
+      height: 56px;
+      border-radius: 20px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.7rem;
-      font-weight: bold;
+      font-size: 1.8rem;
+      box-shadow: 0 8px 16px rgba(15,94,82,0.2);
+    }
+    .logo h1 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+      color: #0f5e52;
     }
     .badge-oms {
-      background: #1e5f5c;
-      padding: 4px 10px;
-      border-radius: 40px;
-      font-size: 0.75rem;
+      background: #fff7ed;
+      border-left: 4px solid #eab308;
+      padding: 0.5rem 1.2rem;
+      border-radius: 100px;
       font-weight: 600;
-      letter-spacing: 0.5px;
-    }
-    .api-warning {
-      background: #1e293b;
-      padding: 6px 14px;
-      border-radius: 30px;
-      font-size: 0.8rem;
-    }
-    /* cartes réalistes style clinique */
-    .card {
-      background: white;
-      border-radius: 20px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.03);
-      padding: 1.5rem;
-      margin-bottom: 2rem;
-      border: 1px solid #e2e8f0;
-      transition: box-shadow 0.2s;
-    }
-    .card:hover {
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-    }
-    .section-title {
-      font-size: 1.6rem;
-      font-weight: 600;
-      letter-spacing: -0.3px;
-      border-left: 5px solid #eab308;
-      padding-left: 1rem;
-      margin-bottom: 1.5rem;
-      color: #0f3b3f;
-    }
-
-    /* grille icônes méga menu */
-    .grid-icons {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-      gap: 1rem;
-      margin: 1.5rem 0;
-    }
-    .menu-card {
-      background: #f8fafc;
-      border-radius: 1rem;
-      padding: 1rem 0.5rem;
-      text-align: center;
-      cursor: pointer;
-      transition: all 0.2s;
-      border: 1px solid #e2e8f0;
-    }
-    .menu-card i {
-      font-size: 2.2rem;
-      color: #0b3b3f;
-      margin-bottom: 8px;
-      display: block;
-    }
-    .menu-card span {
-      font-weight: 500;
       font-size: 0.9rem;
     }
-    .menu-card:hover {
-      background: #eef2ff;
-      border-color: #0b3b3f;
+
+    /* ========== API CARD ========== */
+    .api-card {
+      background: white;
+      border-radius: 28px;
+      padding: 1.5rem 2rem;
+      margin-bottom: 2rem;
+      border: 1px solid #e9edf2;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+    .api-title {
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin-bottom: 0.3rem;
+    }
+    .api-input {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .api-input input {
+      padding: 0.9rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 60px;
+      border: 1.5px solid #e2e8f0;
+      width: 320px;
+      font-family: monospace;
+    }
+    .btn {
+      padding: 0.9rem 2rem;
+      border-radius: 60px;
+      border: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      background: #0f5e52;
+      color: white;
+      transition: 0.2s;
+    }
+    .btn:hover {
+      background: #0a4239;
       transform: translateY(-2px);
     }
 
-    /* zone chat / diagnostic */
-    .chat-container {
-      background: #ffffff;
-      border-radius: 24px;
-      border: 1px solid #e2e8f0;
-      overflow: hidden;
-    }
-    .chat-messages {
-      background: #fefefe;
-      max-height: 400px;
-      overflow-y: auto;
-      padding: 1rem;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-    .message {
-      max-width: 85%;
-      padding: 12px 16px;
-      border-radius: 24px;
-      font-size: 0.95rem;
-      line-height: 1.4;
-    }
-    .user-message {
-      align-self: flex-end;
-      background: #0b3b3f;
-      color: white;
-      border-bottom-right-radius: 4px;
-    }
-    .bot-message {
-      align-self: flex-start;
-      background: #f1f3f5;
-      color: #1e293b;
-      border-bottom-left-radius: 4px;
-      border-left: 3px solid #eab308;
-    }
-    .input-area {
-      display: flex;
-      padding: 1rem;
-      background: #ffffff;
-      border-top: 1px solid #e2e8f0;
-      gap: 12px;
-    }
-    .input-area input {
-      flex: 1;
-      padding: 12px 16px;
-      border: 1px solid #cbd5e1;
-      border-radius: 40px;
-      font-family: inherit;
-      font-size: 0.9rem;
-    }
-    .input-area button {
-      background: #0b3b3f;
-      border: none;
-      padding: 0 20px;
-      border-radius: 40px;
-      color: white;
-      font-weight: 600;
-      cursor: pointer;
-    }
-
-    /* boutons symptomes */
-    .symptoms-list {
+    /* ========== NAVIGATION (grandes tuiles cliquables) ========== */
+    .nav-grid {
       display: flex;
       flex-wrap: wrap;
-      gap: 12px;
-      margin: 20px 0 10px;
+      gap: 1rem;
+      margin-bottom: 2rem;
     }
-    .pill-symptom {
-      background: #eef2ff;
-      border-radius: 40px;
-      padding: 8px 18px;
-      font-size: 0.85rem;
+    .nav-tile {
+      background: white;
+      border-radius: 28px;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      border: 1px solid #e9edf2;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+    .nav-tile i {
+      font-size: 1.4rem;
+      color: #0f5e52;
+    }
+    .nav-tile.active {
+      background: #0f5e52;
+      color: white;
+      border-color: #0f5e52;
+    }
+    .nav-tile.active i {
+      color: white;
+    }
+
+    /* ========== CARTES PRINCIPALES ========== */
+    .card {
+      background: white;
+      border-radius: 32px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.03);
+      border: 1px solid #eef2f8;
+    }
+    .card-title {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      letter-spacing: -0.3px;
+    }
+    .card-title i {
+      color: #0f5e52;
+      font-size: 2rem;
+    }
+
+    /* Grille pour les sous-sections */
+    .grid-3cols {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+    }
+    .option-card {
+      background: #f9fafc;
+      border-radius: 24px;
+      padding: 1.5rem;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s;
+      border: 1px solid #eef2f8;
+    }
+    .option-card i {
+      font-size: 2.2rem;
+      color: #0f5e52;
+      margin-bottom: 0.8rem;
+    }
+    .option-card span {
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
+
+    /* Messages chat */
+    .chat-area {
+      background: #f9fafc;
+      border-radius: 24px;
+      overflow: hidden;
+      margin-top: 1rem;
+    }
+    .messages {
+      max-height: 480px;
+      overflow-y: auto;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .msg {
+      padding: 1rem 1.3rem;
+      border-radius: 20px;
+      max-width: 85%;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+    .msg-user {
+      align-self: flex-end;
+      background: #0f5e52;
+      color: white;
+      border-radius: 20px 20px 4px 20px;
+    }
+    .msg-bot {
+      align-self: flex-start;
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 20px 20px 20px 4px;
+    }
+    .input-row {
+      display: flex;
+      gap: 1rem;
+      padding: 1rem;
+      background: white;
+      border-top: 1px solid #eef2f8;
+    }
+    .input-row input {
+      flex: 1;
+      padding: 1rem 1.2rem;
+      border-radius: 60px;
+      border: 1px solid #e2e8f0;
+      font-size: 1rem;
+    }
+
+    /* Symptômes pills (grands) */
+    .symptom-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin: 1.5rem 0;
+    }
+    .pill {
+      background: #f1f5f9;
+      padding: 0.7rem 1.3rem;
+      border-radius: 60px;
+      font-size: 0.95rem;
       font-weight: 500;
       cursor: pointer;
       transition: 0.1s;
     }
-    .pill-symptom:hover {
-      background: #cbdff5;
-    }
 
-    /* tableau pharmacies */
-    .pharmacy-grid {
+    /* Pharmacies  */
+    .pharmacy-list {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
       gap: 1rem;
       max-height: 500px;
       overflow-y: auto;
     }
-    .pharmacy-item {
-      background: #f9f9fb;
-      border-radius: 16px;
-      padding: 0.75rem;
-      border-left: 5px solid #2e7d64;
-      font-size: 0.85rem;
-    }
-    .open-badge {
-      color: #059669;
-      font-weight: bold;
+    .pharmacy-entry {
+      background: #f9fafc;
+      border-radius: 20px;
+      padding: 1rem;
+      border-left: 4px solid #0f5e52;
     }
 
-    footer {
+    /* Footer */
+    .footer {
       text-align: center;
       margin-top: 3rem;
-      padding: 2rem 0;
-      border-top: 1px solid #cbd5e1;
-      font-size: 0.8rem;
+      padding: 2rem;
+      border-top: 1px solid #e9edf2;
+      font-size: 0.9rem;
       color: #475569;
     }
-    @media (max-width: 700px) {
-      .container {padding: 1rem;}
-      .section-title {font-size: 1.3rem;}
-    }
-    hr {
-      margin: 1rem 0;
-    }
-    button, .menu-card, .pill-symptom {
-      cursor: pointer;
+
+    @media (max-width: 768px) {
+      .container { padding: 1rem; }
+      .card-title { font-size: 1.5rem; }
     }
   </style>
 </head>
 <body>
-<div class="top-bar">
-  <div class="logo-area">
-    <div class="logo-icon">🏥</div>
-    <div><strong>MediAfrique AI</strong><span style="font-size:0.8rem;"> — Côte d'Ivoire</span></div>
-    <div class="badge-oms">✅ OMS · Médecine Africaine</div>
-  </div>
-  <div class="api-warning"><i class="fas fa-key"></i> Clé Groq nécessaire</div>
-</div>
-
 <div class="container">
-  <!-- ÉTAPE 1 : API KEY RÉALISTE -->
-  <div class="card" id="apiCard">
-    <div style="display: flex; justify-content: space-between; flex-wrap: wrap; align-items: center;">
-      <div><i class="fas fa-lock" style="color:#eab308;"></i> <strong>🔐 Activation IA requise</strong><br><small style="color:#334155;">Votre clé reste privée, stockée localement.</small></div>
-      <div>
-        <input type="password" id="apiKeyInput" placeholder="Clé Groq (commence par gsk_)" style="padding: 10px 15px; width: 260px; border-radius: 60px; border:1px solid #ccc;">
-        <button id="saveApiBtn" style="background:#0b3b3f; color:white; border:none; padding: 10px 20px; border-radius: 40px; margin-left: 8px;">Enregistrer</button>
-      </div>
+  
+  <!-- HEADER -->
+  <div class="header">
+    <div class="logo">
+      <div class="logo-icon">🏥</div>
+      <h1>MediAfrique AI</h1>
+      <div class="badge-oms">✅ Protocoles OMS · Médecine Africaine</div>
     </div>
-    <div id="apiStatus" style="margin-top: 10px; font-size:0.8rem;"></div>
+    <div>🇨🇮 Côte d'Ivoire</div>
   </div>
 
-  <!-- MENU PRINCIPAL : DESIGN RÉALISTE -->
-  <div class="grid-icons">
-    <div class="menu-card" data-section="diagnostic"><i class="fas fa-stethoscope"></i><span>🩺 Diagnostic IA</span></div>
-    <div class="menu-card" data-section="urgences"><i class="fas fa-ambulance"></i><span>🚨 Urgences & Secours</span></div>
-    <div class="menu-card" data-section="pharmacies"><i class="fas fa-store"></i><span>🏪 Pharmacies garde</span></div>
-    <div class="menu-card" data-section="maladies"><i class="fas fa-biohazard"></i><span>🦠 Maladies tropicales</span></div>
-    <div class="menu-card" data-section="maternel"><i class="fas fa-baby-carriage"></i><span>👶 Maternelle & Enfant</span></div>
-    <div class="menu-card" data-section="plantes"><i class="fas fa-leaf"></i><span>🌿 Plantes médicinales</span></div>
+  <!-- API KEY -->
+  <div class="api-card">
+    <div>
+      <div class="api-title"><i class="fas fa-key"></i> 🔐 Activation IA médicale</div>
+      <div style="font-size:0.85rem;">Votre clé Groq reste sur cet appareil (jamais envoyée au serveur)</div>
+    </div>
+    <div class="api-input">
+      <input type="password" id="apiKeyInput" placeholder="Clé Groq (ex: gsk_...)" style="width: 300px;">
+      <button class="btn" id="saveApiBtn">Enregistrer</button>
+    </div>
+    <div id="apiStatus" style="font-size:0.8rem;"></div>
   </div>
 
-  <!-- SECTION DIAGNOSTIC IA (chat) -->
-  <div id="diagnostic" class="card section-block" style="display: block;">
-    <h2 class="section-title">🩺 Diagnostic médical & Ordonnance</h2>
-    <p style="margin-bottom: 12px;">Décrivez vos symptômes ou choisissez :</p>
-    <div class="symptoms-list">
-      <span class="pill-symptom" data-symptom="Fièvre + frissons">🌡️ Fièvre + frissons</span>
-      <span class="pill-symptom" data-symptom="Maux de tête violents">🤕 Maux de tête</span>
-      <span class="pill-symptom" data-symptom="Diarrhée + vomissements">💧 Diarrhée</span>
-      <span class="pill-symptom" data-symptom="Toux + fatigue depuis 2 semaines">😮💨 Toux persistante</span>
-      <span class="pill-symptom" data-symptom="Douleurs articulaires et fièvre">🦴 Douleurs corps</span>
+  <!-- NAVIGATION GRANDE -->
+  <div class="nav-grid">
+    <div class="nav-tile" data-section="diagnostic"><i class="fas fa-stethoscope"></i> 🩺 Diagnostic IA</div>
+    <div class="nav-tile" data-section="urgences"><i class="fas fa-truck-medical"></i> 🚨 Urgences & Premiers secours</div>
+    <div class="nav-tile" data-section="pharmacies"><i class="fas fa-prescription-bottle"></i> 🏪 Pharmacies de garde</div>
+    <div class="nav-tile" data-section="maladies"><i class="fas fa-bacteria"></i> 🦠 Maladies tropicales</div>
+    <div class="nav-tile" data-section="maternel"><i class="fas fa-baby"></i> 👶 Mère & Enfant</div>
+    <div class="nav-tile" data-section="plantes"><i class="fas fa-seedling"></i> 🌿 Plantes médicinales</div>
+  </div>
+
+  <!-- SECTION DIAGNOSTIC IA -->
+  <div id="diagnostic" class="card section-content">
+    <div class="card-title"><i class="fas fa-microphone-alt"></i> Diagnostic & ordonnance — intelligence médicale</div>
+    <p style="margin-bottom: 1rem; font-size: 1rem;">Décrivez vos symptômes (âge, durée, fièvre, douleurs) pour un diagnostic précis et une ordonnance adaptée à l'Afrique de l'Ouest.</p>
+    <div class="symptom-pills">
+      <span class="pill" data-symptom="Fièvre 39°C, frissons intenses, fatigue">🌡️ Fièvre + frissons</span>
+      <span class="pill" data-symptom="Maux de tête violents, raideur nuque, photophobie">🤕 Maux de tête sévères</span>
+      <span class="pill" data-symptom="Diarrhée aqueuse, vomissements 5 fois par jour">💧 Diarrhée & vomissements</span>
+      <span class="pill" data-symptom="Toux sèche depuis 3 semaines, perte de poids">😮💨 Toux persistante</span>
+      <span class="pill" data-symptom="Douleurs articulaires, éruption cutanée, fièvre">🦴 Douleurs corps + éruption</span>
     </div>
-    <div class="chat-container">
-      <div class="chat-messages" id="chatMessages">
-        <div class="message bot-message">Bonjour, je suis l'assistant médical MediAfrique. Décrivez vos symptômes (âge, durée, douleurs) pour un diagnostic et une ordonnance selon protocoles OMS - Afrique.</div>
+    <div class="chat-area">
+      <div class="messages" id="chatMessages">
+        <div class="msg msg-bot">👨‍⚕️ Bonjour. Je suis l'assistant médical MediAfrique. Décrivez vos symptômes clairement (depuis quand, température, autres signes). Je vous répondrai avec diagnostic, traitement et conseils OMS.</div>
       </div>
-      <div class="input-area">
-        <input type="text" id="userInput" placeholder="Ex: Fatigue, nausées, fièvre 39° depuis 2 jours...">
-        <button id="sendBtn"><i class="fas fa-paper-plane"></i> Envoyer</button>
+      <div class="input-row">
+        <input type="text" id="userInput" placeholder="Exemple : Fièvre 39°C depuis 2 jours, maux de tête, fatigue intense...">
+        <button class="btn" id="sendBtn">Envoyer <i class="fas fa-arrow-right"></i></button>
       </div>
     </div>
-    <p class="api-warning" style="margin-top: 12px; background:#fff3e0;"><i class="fas fa-info-circle"></i> ⚕️ Réponse médicale basée sur les recommandations OMS / CI. En cas d'urgence, appelez le 101 ou 115.</p>
+    <div style="margin-top: 1rem; font-size:0.85rem; color:#d97706;"><i class="fas fa-exclamation-triangle"></i> Ce service n'est pas un avis médical officiel. En cas d'urgence vitale, appelez le 115 ou 101.</div>
   </div>
 
   <!-- URGENCES -->
-  <div id="urgences" class="card section-block" style="display: none;">
-    <h2 class="section-title">🚨 Premiers secours immédiats</h2>
-    <div class="grid-icons" style="grid-template-columns: repeat(auto-fit,minmax(130px,1fr));">
-      <div class="menu-card" data-urgence="Arrêt cardiaque">🫀 Massage cardiaque</div>
-      <div class="menu-card" data-urgence="Hémorragie">🩸 Compression</div>
-      <div class="menu-card" data-urgence="Morsure serpent">🐍 Ne pas garrot</div>
-      <div class="menu-card" data-urgence="Convulsions enfant">👶 Position latérale</div>
+  <div id="urgences" class="card section-content" style="display:none;">
+    <div class="card-title"><i class="fas fa-ambulance"></i> Conduite à tenir en urgence</div>
+    <div class="grid-3cols">
+      <div class="option-card" data-urgence="Arret cardiaque">🫀 Arrêt cardiaque</div>
+      <div class="option-card" data-urgence="Hemorragie">🩸 Hémorragie grave</div>
+      <div class="option-card" data-urgence="Morsure serpent">🐍 Morsure de serpent</div>
+      <div class="option-card" data-urgence="Convulsions">👶 Convulsions enfant</div>
+      <div class="option-card" data-urgence="Brulure">🔥 Brûlure grave</div>
+      <div class="option-card" data-urgence="AVC">🧠 Signe AVC (paralysie)</div>
     </div>
-    <div id="urgenceResult" style="background:#fef2e0; padding: 1rem; border-radius: 1rem; margin-top: 1rem;">
-      <i class="fas fa-hand-holding-heart"></i> Sélectionnez une urgence pour obtenir la conduite à tenir.
-    </div>
-    <div class="card" style="margin-top: 1rem; background:#f0f9f6;">
-      <strong>⚠️ Signes d'alarme absolus</strong><br>
-      ▪ Douleur thoracique + bras gauche → Infarctus → Urgences.<br>
-      ▪ Paralysie faciale ou trouble parole → AVC → Appel 115.<br>
-      ▪ Fièvre >40°C + nuque raide → Méningite → Hôpital.
+    <div id="urgenceResult" style="background:#fef9e6; padding: 1.5rem; border-radius: 24px; margin-top: 1rem; font-size:1rem;">
+      <i class="fas fa-hand-holding-heart"></i> Sélectionnez une urgence pour afficher les premiers gestes.
     </div>
   </div>
 
-  <!-- PHARMACIES (données intégrées réalistes) -->
-  <div id="pharmacies" class="card section-block" style="display: none;">
-    <h2 class="section-title"><i class="fas fa-prescription-bottle"></i> Pharmacies de garde – Côte d'Ivoire</h2>
-    <p><i class="fas fa-clock"></i> Heure locale simulée : <span id="currentTime">15:40</span> – 117 pharmacies disponibles</p>
-    <div class="pharmacy-grid" id="pharmacyList"></div>
-    <p class="api-warning" style="margin-top:1rem;">📞 Appelez le <strong>170</strong> (garde officielle) ou CHU 24h/24.</p>
-  </div>
-
-  <!-- MALADIES TROPICALES -->
-  <div id="maladies" class="card section-block" style="display: none;">
-    <h2 class="section-title">🦠 Maladies prioritaires – Protocoles OMS</h2>
-    <div id="diseaseList" style="display: flex; flex-direction: column; gap: 1rem;"></div>
-  </div>
-
-  <!-- SANTÉ MATERNELLE -->
-  <div id="maternel" class="card section-block" style="display: none;">
-    <h2 class="section-title">🤱 Santé maternelle & infantile</h2>
-    <div class="grid-icons" style="grid-template-columns:repeat(3,1fr);">
-      <div class="menu-card" data-maternel="grossesse">🤰 Conseils grossesse</div>
-      <div class="menu-card" data-maternel="allaitement">🍼 Allaitement</div>
-      <div class="menu-card" data-maternel="vaccins">💉 Calendrier vaccinal</div>
+  <!-- PHARMACIES -->
+  <div id="pharmacies" class="card section-content" style="display:none;">
+    <div class="card-title"><i class="fas fa-shop"></i> Pharmacies de garde & 24h/24</div>
+    <p style="margin-bottom:1rem;"><i class="fas fa-clock"></i> Mise à jour temps réel — <span id="currentTime"></span> — 117 officines en service</p>
+    <div class="pharmacy-list" id="pharmacyList"></div>
+    <div style="margin-top:1rem; background:#e6f7f4; padding:1rem; border-radius:20px;">
+      📞 Numéro d'urgence des gardes : <strong>170</strong> (gratuit) ou CHU les plus proches.
     </div>
-    <div id="maternelResult" class="chat-container" style="padding: 1rem; margin-top: 1rem;">Choisissez un thème pour afficher les recommandations officielles.</div>
   </div>
 
-  <!-- PLANTES MÉDICINALES -->
-  <div id="plantes" class="card section-block" style="display: none;">
-    <h2 class="section-title">🌿 Pharmacopée africaine</h2>
-    <div class="grid-icons" style="grid-template-columns:repeat(auto-fit,minmax(160px,1fr));">
-      <div class="menu-card" data-plante="neem">Neem (paludisme)</div>
-      <div class="menu-card" data-plante="kinkeliba">Kinkeliba (fièvre)</div>
-      <div class="menu-card" data-plante="moringa">Moringa (carences)</div>
+  <!-- MALADIES -->
+  <div id="maladies" class="card section-content" style="display:none;">
+    <div class="card-title"><i class="fas fa-disease"></i> Maladies prioritaires (OMS Afrique)</div>
+    <div id="diseaseList" style="display:flex; flex-direction:column; gap:1.5rem;"></div>
+  </div>
+
+  <!-- MATERNELLE -->
+  <div id="maternel" class="card section-content" style="display:none;">
+    <div class="card-title"><i class="fas fa-heartbeat"></i> Santé maternelle & infantile</div>
+    <div class="grid-3cols">
+      <div class="option-card" data-maternel="grossesse">🤰 Suivi grossesse</div>
+      <div class="option-card" data-maternel="allaitement">🍼 Allaitement maternel</div>
+      <div class="option-card" data-maternel="vaccins">💉 Calendrier vaccinal CI</div>
     </div>
-    <div id="planteResult" class="chat-container" style="padding:1rem;">Sélectionnez une plante pour les précautions et usages traditionnels validés.</div>
+    <div id="maternelResult" style="background:#f9fafc; padding:1.5rem; border-radius:24px; margin-top:1rem;">Sélectionnez un thème pour obtenir les recommandations actualisées.</div>
   </div>
 
-  <footer>
-    <p>🏥 MediAfrique AI – Conçu pour l'Afrique, basé sur les protocoles OMS et MSF.<br>
-    © 2026 – Tuo Stéphane, Anyama 🇨🇮 | Tous droits réservés. Assistance médicale non substituable à un avis présentiel.</p>
-  </footer>
+  <!-- PLANTES -->
+  <div id="plantes" class="card section-content" style="display:none;">
+    <div class="card-title"><i class="fas fa-leaf"></i> Pharmacopée traditionnelle validée</div>
+    <div class="grid-3cols">
+      <div class="option-card" data-plante="neem">🌿 Neem (paludisme)</div>
+      <div class="option-card" data-plante="kinkeliba">🍃 Kinkeliba (fièvre)</div>
+      <div class="option-card" data-plante="moringa">🌱 Moringa nutrition</div>
+    </div>
+    <div id="planteResult" style="background:#f9fafc; padding:1.5rem; border-radius:24px;">Choisissez une plante médicinale pour les indications et précautions.</div>
+  </div>
+
+  <div class="footer">
+    <p>🏥 <strong>MediAfrique AI</strong> — Assistant médical basé sur les protocoles OMS, adapté à la Côte d'Ivoire.<br>
+    Développé par Tuo Stéphane, Anyama 🇨🇮 — Données actualisées 2026.</p>
+  </div>
 </div>
 
 <script>
-  // ------------- BASE DE DONNÉES RÉALISTE -------------
-  const pharmacyData = [
-    "Pharmacie CHU Cocody (24h/24) - Cocody", "Pharmacie CHU Treichville (24h/24)", "Pharmacie Plateau (Rue des Banques) ferme 22h",
-    "Pharmacie Longchamp - jusqu'à 20h", "Pharmacie Rédemption Angré - 21h", "Pharmacie Ave Maria Angré - 20h",
-    "Pharmacie Adjamé Grand Marché - 21h", "Pharmacie Abobo Gare - 20h", "Pharmacie Yopougon Gesco - 21h",
-    "Pharmacie Marcory Zone 4 - 21h", "Pharmacie Bouaké Centre - 21h", "Pharmacie San-Pédro Centre - 20h"
+  // ========== DONNÉES STATIQUES ==========
+  const pharmacies = ["Pharmacie CHU Cocody (24h/24)","Pharmacie CHU Treichville","Pharmacie Plateau (Rue des Banques) ferme 22h","Pharmacie Longchamp 20h","Pharmacie Rédemption Angré 21h","Pharmacie Abobo Gare 20h","Pharmacie Yopougon Gesco 21h","Pharmacie Marcory Zone4","Pharmacie Bouaké Centre 21h","Pharmacie San-Pédro Centre 20h","Pharmacie Daloa Kennedy","Pharmacie Korhogo Commerce"];
+  const maladies = [
+    { nom:"Paludisme", desc:"Fièvre cyclique, frissons, sueurs. Traitement: ACT (Artémisinine-Luméfantrine) selon poids. Si neuropaludisme → hospitalisation." },
+    { nom:"Typhoïde", desc:"Fièvre en plateau, douleurs abdominales. Ciprofloxacine 500mg 2x/j pendant 7j. Confirmé par test Widal." },
+    { nom:"Choléra", desc:"Diarrhée de riz, déshydratation rapide. Réhydratation orale/IV + doxycycline. Zone endémique." },
+    { nom:"Méningite", desc:"Céphalées, raideur de nuque, fièvre élevée. Céftriaxone IV et transfert d'urgence." }
   ];
-  const diseases = [
-    { name:"Paludisme", desc:"Fièvre, frissons, sueurs. Traitement: ACT (Artémisinine) selon poids. ⚠️ Urgent si neuropaludisme." },
-    { name:"Typhoïde", desc:"Fièvre prolongée, diarrhée. Ciprofloxacine 500mg 2x/j 7j - après avis médical." },
-    { name:"Choléra", desc:"Diarrhée aqueuse abondante → réhydratation orale/IV + doxycycline. Isolement." },
-    { name:"Méningite", desc:"Raideur nuque, fièvre élevée → Céftriaxone, hospitalisation d'urgence." }
-  ];
-
-  // Affichage pharmacies
   function renderPharmacies() {
     const container = document.getElementById('pharmacyList');
-    if(container) {
-      container.innerHTML = pharmacyData.map(p => `<div class="pharmacy-item"><i class="fas fa-map-marker-alt"></i> ${p} <span class="open-badge">🟢 Ouverte/Horaire variable</span></div>`).join('');
-    }
+    if(container) container.innerHTML = pharmacies.map(p => `<div class="pharmacy-entry"><i class="fas fa-store"></i> ${p}<br><span style="font-size:0.8rem;">🟢 ouverte selon horaire</span></div>`).join('');
   }
-  document.getElementById('currentTime').innerText = new Date().toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'});
   renderPharmacies();
+  document.getElementById('currentTime').innerText = new Date().toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'});
+  const diseaseContainer = document.getElementById('diseaseList');
+  if(diseaseContainer) diseaseContainer.innerHTML = maladies.map(m => `<div style="background:#fafcff; border-radius:24px; padding:1.3rem;"><strong style="font-size:1.2rem;">🦟 ${m.nom}</strong><br>${m.desc}</div>`).join('');
 
-  // Maladies
-  const diseaseDiv = document.getElementById('diseaseList');
-  if(diseaseDiv) diseaseDiv.innerHTML = diseases.map(d => `<div style="border-left: 4px solid #eab308; padding-left:16px;"><strong>🦟 ${d.name}</strong><br>${d.desc}</div>`).join('');
-
-  // Urgences simples (hors IA)
-  const urgMap = {
-    "Arrêt cardiaque": "🫀 Appeler les secours (115/101). Commencer RCP : 30 compressions / 2 insufflations. Défibrillateur si disponible.",
-    "Hémorragie": "🩸 Compresser directement la plaie, garrot en dernier recours. Élévation membre. Transport rapide.",
-    "Morsure serpent": "🐍 Immobiliser le membre, ôter bijoux, ne pas sucer. Transport vers centre antivenin. Ne pas poser de garrot.",
-    "Convulsions enfant": "👶 Mettre l'enfant en PLS (position latérale de sécurité), protéger tête, ne pas mettre objet en bouche. Appeler SAMU."
-  };
+  // urgences textes
+  const urgenceText = { "Arret cardiaque":"Appeler 115, débuter RCP (30 compressions / 2 insufflations). Défibrillateur si possible.","Hemorragie":"Compression manuelle directe, garrot en dernier secours. Transport urgent.","Morsure serpent":"Immobiliser membre, ôter bijoux. Ne pas sucer, ne pas poser de garrot. Transport centre de santé.","Convulsions":"Position latérale de sécurité, protéger tête, ne pas mettre d'objet dans bouche. Appeler SAMU.","Brulure":"Refroidir à l'eau tiède 15 min, ne pas percer les cloques, couvrir avec pansement stérile.","AVC":"Visage asymétrique, bras faible, parole trouble → URGENCE VITALE : transport immédiat."};
   document.querySelectorAll('[data-urgence]').forEach(btn => {
     btn.addEventListener('click', () => {
-      const key = btn.getAttribute('data-urgence');
-      document.getElementById('urgenceResult').innerHTML = `<i class="fas fa-heartbeat"></i> <strong>${key}</strong><br>${urgMap[key] || "Appelez immédiatement le 115"}`;
+      let key = btn.getAttribute('data-urgence');
+      document.getElementById('urgenceResult').innerHTML = `<i class="fas fa-bolt"></i> <strong>${key}</strong><br>${urgenceText[key] || 'Appelez les urgences (115)'}`;
     });
   });
-  // Maternelle
-  const maternelInfo = {
-    grossesse: "Suivi prénatal : 4 consultations minimum. Acide folique (5mg) 1er trimestre. Fer + acide folique 2e/3e trimestre. Vaccin antitétanique.",
-    allaitement: "Allaitement exclusif jusqu'à 6 mois. Positions: au sein à la demande. Éviter eau ou tisanes avant 6 mois.",
-    vaccins: "Calendrier CI : BCG à naissance, Penta/PCV/Rota 6 sem, Rougeole 9 mois, Rappels 18 mois. Consultez carnet de santé."
-  };
+  const maternelData = { grossesse:"Consultations prénatales (minimum 4). Acide folique 5mg/j. Vaccin antitétanique. Fer dès 2e trimestre.", allaitement:"Allaitement exclusif 0-6 mois. Téter à la demande. Surveiller prise de poids.", vaccins:"BCG naissance, Penta/PCV13/Rota 6 sem, Rougeole 9 mois, rappel DTC 18 mois." };
   document.querySelectorAll('[data-maternel]').forEach(b => {
     b.addEventListener('click',()=>{
-      const type = b.getAttribute('data-maternel');
-      document.getElementById('maternelResult').innerHTML = `<div class="message bot-message">${maternelInfo[type]}</div>`;
+      let type = b.getAttribute('data-maternel');
+      document.getElementById('maternelResult').innerHTML = `<div style="font-size:1rem;">👩‍⚕️ ${maternelData[type]}</div>`;
     });
   });
-  // Plantes
-  const plantesData = {
-    neem: "Neem (Azadirachta indica) : antipaludique, antipyrétique. Utiliser décoction feuilles, mais pas chez femme enceinte sans avis. Ne remplace pas ACT.",
-    kinkeliba: "Kinkeliba (Combretum micranthum) : fièvre, hépatique. À utiliser 2 semaines max. Éviter grossesse.",
-    moringa: "Moringa oleifera : riche en vitamines, lutte contre la malnutrition. Feuilles séchées en poudre (1 cuillère/jour)."
-  };
+  const plantesData = { neem:"Neem : antipaludique (non substituable à ACT). Déconseillé chez femme enceinte. Usage externe possible.", kinkeliba:"Kinkeliba : fièvre, troubles digestifs. Infusion modérée. Attention grossesse.", moringa:"Moringa : anti-carences nutritionnelles. 1-2 cuillères poudre feuilles par jour." };
   document.querySelectorAll('[data-plante]').forEach(p => {
     p.addEventListener('click',()=>{
-      const id = p.getAttribute('data-plante');
-      document.getElementById('planteResult').innerHTML = `<div class="message bot-message">🌿 ${plantesData[id]}</div>`;
+      let id = p.getAttribute('data-plante');
+      document.getElementById('planteResult').innerHTML = `<div>🌿 <strong>${id}</strong><br>${plantesData[id]}</div>`;
     });
   });
 
-  // ---------- GESTION API GROQ (DIAGNOSTIC RÉALISTE) ----------
-  let apiKey = localStorage.getItem('groq_api_key') || '';
+  // ========== IA GROQ ==========
+let apiKey = localStorage.getItem('groq_api_key') || '';
   const apiInput = document.getElementById('apiKeyInput');
-  const apiStatusDiv = document.getElementById('apiStatus');
   if(apiKey) apiInput.value = apiKey;
   document.getElementById('saveApiBtn').addEventListener('click', () => {
-    let newKey = apiInput.value.trim();
-    if(newKey.startsWith('gsk_')) {
-      localStorage.setItem('groq_api_key', newKey);
-      apiKey = newKey;
-      apiStatusDiv.innerHTML = '✅ Clé enregistrée (locale) - IA prête.';
-    } else { apiStatusDiv.innerHTML = '❌ Clé invalide (doit commencer par gsk_)'; }
+    let key = apiInput.value.trim();
+    if(key.startsWith('gsk_')) {
+      localStorage.setItem('groq_api_key', key);
+      apiKey = key;
+      document.getElementById('apiStatus').innerHTML = '✅ Clé valide, IA prête.';
+    } else { document.getElementById('apiStatus').innerHTML = '❌ Clé invalide (gsk_...)'; }
   });
-  async function callGroq(userMessage) {
-    if(!apiKey) return "🔑 Veuillez entrer votre clé API Groq (gsk_...) en haut pour activer le diagnostic médical professionnel.";
-    const url = 'https://api.groq.com/openai/v1/chat/completions';
-    const systemPrompt = `Tu es un médecin africain, spécialiste en santé tropicale OMS. Fournis diagnostic, traitement (dosage précis), médicaments disponibles en Côte d'Ivoire, et signes d'alerte. Réponds toujours avec empathie et précision. Si symptômes critiques → conseil urgence. Ne jamais inventer de médicament hors liste OMS.`;
+  async function askGroq(msg) {
+    if(!apiKey) return "🔐 Saisissez votre clé API Groq (gsk_) pour activer le diagnostic médical.";
     try {
-      const res = await fetch(url, {
+      const res = await fetch('https://api.groq.com/openai/v1/chat/completions', {
         method: 'POST',
         headers: { 'Authorization': `Bearer ${apiKey}`, 'Content-Type': 'application/json' },
-        body: JSON.stringify({ model: "llama-3.3-70b-versatile", messages: [{ role: "system", content: systemPrompt }, { role: "user", content: userMessage }], temperature: 0.2 })
+        body: JSON.stringify({ model: "llama-3.3-70b-versatile", messages: [{ role: "system", content: "Tu es un médecin urgentiste spécialiste Afrique, OMS. Réponds avec DIAGNOSTIC, DOSAGE PRÉCIS, ORDONNANCE, et signes de gravité. N'invente pas." }, { role: "user", content: msg }], temperature: 0.3 })
       });
       const data = await res.json();
-      if(data.choices) return data.choices[0].message.content;
-      else return "Erreur IA: vérifiez votre clé ou réessayez.";
-    } catch(e) { return "Problème connexion IA. Vérifiez internet / clé."; }
+      return data.choices?.[0]?.message?.content || "Erreur IA, vérifiez clé.";
+    } catch(e){ return "Erreur connexion IA."; }
   }
   const chatDiv = document.getElementById('chatMessages');
-  const userInp = document.getElementById('userInput');
-  const sendBtn = document.getElementById('sendBtn');
-  function addMessage(text, isUser) {
-    const msgDiv = document.createElement('div');
-    msgDiv.className = `message ${isUser ? 'user-message' : 'bot-message'}`;
-    msgDiv.innerHTML = text.replace(/\n/g, '<br>');
-    chatDiv.appendChild(msgDiv);
-    chatDiv.scrollTop = chatDiv.scrollHeight;
+  const userIn = document.getElementById('userInput');
+  const send = document.getElementById('sendBtn');
+  function addMsg(text, isUser) {
+    const d = document.createElement('div');
+    d.className = `msg ${isUser ? 'msg-user' : 'msg-bot'}`;
+    d.innerHTML = text.replace(/\n/g,'<br>');
+    chatDiv.appendChild(d);
+    d.scrollIntoView({ behavior: 'smooth' });
   }
-  sendBtn.addEventListener('click', async () => {
-    let q = userInp.value.trim();
+  send.addEventListener('click', async () => {
+    let q = userIn.value.trim();
     if(!q) return;
-    addMessage(q, true);
-    userInp.value = '';
-    addMessage("🩺 L’IA médicale analyse...", false);
-    const answer = await callGroq(q);
+    addMsg(q, true);
+    userIn.value = '';
+    addMsg("🩺 Analyse en cours...", false);
+    const reply = await askGroq(q);
     chatDiv.removeChild(chatDiv.lastChild);
-    addMessage(answer, false);
+    addMsg(reply, false);
   });
-  document.querySelectorAll('.pill-symptom').forEach(pill => {
-    pill.addEventListener('click', () => {
-      userInp.value = pill.getAttribute('data-symptom');
-      sendBtn.click();
-    });
+  document.querySelectorAll('.pill').forEach(p => {
+    p.addEventListener('click', ()=> { userIn.value = p.getAttribute('data-symptom'); send.click(); });
   });
-
-  // navigation sections
+  // navigation entre sections
   const sections = ['diagnostic','urgences','pharmacies','maladies','maternel','plantes'];
-  function showSection(id) {
-    sections.forEach(sec => { let el = document.getElementById(sec); if(el) el.style.display = 'none'; });
-    document.getElementById(id).style.display = 'block';
-  }
-  document.querySelectorAll('.menu-card').forEach(card => {
-    card.addEventListener('click', () => {
-      let section = card.getAttribute('data-section');
-      if(section && sections.includes(section)) showSection(section);
-    });
-  });
+  function showSection(id) { sections.forEach(s => document.getElementById(s).style.display = 'none'); document.getElementById(id).style.display = 'block'; document.querySelectorAll('.nav-tile').forEach(t => t.classList.remove('active')); document.querySelector(`.nav-tile[data-section="${id}"]`).classList.add('active'); }
+  document.querySelectorAll('.nav-tile').forEach(nav => nav.addEventListener('click', ()=> showSection(nav.getAttribute('data-section'))));
   showSection('diagnostic');
 </script>
 </body>
